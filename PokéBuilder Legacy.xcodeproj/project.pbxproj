@@ -1,0 +1,306 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A69860C52FE446CC0095E066 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69860C42FE446CC0095E066 /* UIKit.framework */; };
+		A69860C72FE446CC0095E066 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69860C62FE446CC0095E066 /* Foundation.framework */; };
+		A69860C92FE446CC0095E066 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69860C82FE446CC0095E066 /* CoreGraphics.framework */; };
+		A69860CF2FE446CC0095E066 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A69860CD2FE446CC0095E066 /* InfoPlist.strings */; };
+		A69860D12FE446CC0095E066 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A69860D02FE446CC0095E066 /* main.m */; };
+		A69860D52FE446CC0095E066 /* PokeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A69860D42FE446CC0095E066 /* PokeAppDelegate.m */; };
+		A69860D72FE446CC0095E066 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860D62FE446CC0095E066 /* Default.png */; };
+		A69860D92FE446CC0095E066 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860D82FE446CC0095E066 /* Default@2x.png */; };
+		A69860DB2FE446CC0095E066 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860DA2FE446CC0095E066 /* Default-568h@2x.png */; };
+		A69860DE2FE446CC0095E066 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69860DC2FE446CC0095E066 /* MainStoryboard.storyboard */; };
+		A69860E12FE446CD0095E066 /* PokeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69860E02FE446CD0095E066 /* PokeViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A69860C12FE446CC0095E066 /* PokéBuilder Legacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PokéBuilder Legacy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A69860C42FE446CC0095E066 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A69860C62FE446CC0095E066 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A69860C82FE446CC0095E066 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A69860CC2FE446CC0095E066 /* PokéBuilder Legacy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PokéBuilder Legacy-Info.plist"; sourceTree = "<group>"; };
+		A69860CE2FE446CC0095E066 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A69860D02FE446CC0095E066 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A69860D22FE446CC0095E066 /* PokéBuilder Legacy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PokéBuilder Legacy-Prefix.pch"; sourceTree = "<group>"; };
+		A69860D32FE446CC0095E066 /* PokeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokeAppDelegate.h; sourceTree = "<group>"; };
+		A69860D42FE446CC0095E066 /* PokeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokeAppDelegate.m; sourceTree = "<group>"; };
+		A69860D62FE446CC0095E066 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A69860D82FE446CC0095E066 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A69860DA2FE446CC0095E066 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A69860DD2FE446CC0095E066 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		A69860DF2FE446CD0095E066 /* PokeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokeViewController.h; sourceTree = "<group>"; };
+		A69860E02FE446CD0095E066 /* PokeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokeViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A69860BE2FE446CC0095E066 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A69860C52FE446CC0095E066 /* UIKit.framework in Frameworks */,
+				A69860C72FE446CC0095E066 /* Foundation.framework in Frameworks */,
+				A69860C92FE446CC0095E066 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A69860B82FE446CC0095E066 = {
+			isa = PBXGroup;
+			children = (
+				A69860CA2FE446CC0095E066 /* PokéBuilder Legacy */,
+				A69860C32FE446CC0095E066 /* Frameworks */,
+				A69860C22FE446CC0095E066 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A69860C22FE446CC0095E066 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A69860C12FE446CC0095E066 /* PokéBuilder Legacy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A69860C32FE446CC0095E066 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A69860C42FE446CC0095E066 /* UIKit.framework */,
+				A69860C62FE446CC0095E066 /* Foundation.framework */,
+				A69860C82FE446CC0095E066 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A69860CA2FE446CC0095E066 /* PokéBuilder Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				A69860D32FE446CC0095E066 /* PokeAppDelegate.h */,
+				A69860D42FE446CC0095E066 /* PokeAppDelegate.m */,
+				A69860DC2FE446CC0095E066 /* MainStoryboard.storyboard */,
+				A69860DF2FE446CD0095E066 /* PokeViewController.h */,
+				A69860E02FE446CD0095E066 /* PokeViewController.m */,
+				A69860CB2FE446CC0095E066 /* Supporting Files */,
+			);
+			path = "PokéBuilder Legacy";
+			sourceTree = "<group>";
+		};
+		A69860CB2FE446CC0095E066 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A69860CC2FE446CC0095E066 /* PokéBuilder Legacy-Info.plist */,
+				A69860CD2FE446CC0095E066 /* InfoPlist.strings */,
+				A69860D02FE446CC0095E066 /* main.m */,
+				A69860D22FE446CC0095E066 /* PokéBuilder Legacy-Prefix.pch */,
+				A69860D62FE446CC0095E066 /* Default.png */,
+				A69860D82FE446CC0095E066 /* Default@2x.png */,
+				A69860DA2FE446CC0095E066 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A69860C02FE446CC0095E066 /* PokéBuilder Legacy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A69860E42FE446CD0095E066 /* Build configuration list for PBXNativeTarget "PokéBuilder Legacy" */;
+			buildPhases = (
+				A69860BD2FE446CC0095E066 /* Sources */,
+				A69860BE2FE446CC0095E066 /* Frameworks */,
+				A69860BF2FE446CC0095E066 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "PokéBuilder Legacy";
+			productName = "PokéBuilder Legacy";
+			productReference = A69860C12FE446CC0095E066 /* PokéBuilder Legacy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A69860B92FE446CC0095E066 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Poke;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Quang Minh Nguyen";
+			};
+			buildConfigurationList = A69860BC2FE446CC0095E066 /* Build configuration list for PBXProject "PokéBuilder Legacy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A69860B82FE446CC0095E066;
+			productRefGroup = A69860C22FE446CC0095E066 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A69860C02FE446CC0095E066 /* PokéBuilder Legacy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A69860BF2FE446CC0095E066 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A69860CF2FE446CC0095E066 /* InfoPlist.strings in Resources */,
+				A69860D72FE446CC0095E066 /* Default.png in Resources */,
+				A69860D92FE446CC0095E066 /* Default@2x.png in Resources */,
+				A69860DB2FE446CC0095E066 /* Default-568h@2x.png in Resources */,
+				A69860DE2FE446CC0095E066 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A69860BD2FE446CC0095E066 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A69860D12FE446CC0095E066 /* main.m in Sources */,
+				A69860D52FE446CC0095E066 /* PokeAppDelegate.m in Sources */,
+				A69860E12FE446CD0095E066 /* PokeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A69860CD2FE446CC0095E066 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A69860CE2FE446CC0095E066 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A69860DC2FE446CC0095E066 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A69860DD2FE446CC0095E066 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A69860E22FE446CD0095E066 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A69860E32FE446CD0095E066 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A69860E52FE446CD0095E066 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PokéBuilder Legacy/PokéBuilder Legacy-Prefix.pch";
+				INFOPLIST_FILE = "PokéBuilder Legacy/PokéBuilder Legacy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A69860E62FE446CD0095E066 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PokéBuilder Legacy/PokéBuilder Legacy-Prefix.pch";
+				INFOPLIST_FILE = "PokéBuilder Legacy/PokéBuilder Legacy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A69860BC2FE446CC0095E066 /* Build configuration list for PBXProject "PokéBuilder Legacy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A69860E22FE446CD0095E066 /* Debug */,
+				A69860E32FE446CD0095E066 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A69860E42FE446CD0095E066 /* Build configuration list for PBXNativeTarget "PokéBuilder Legacy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A69860E52FE446CD0095E066 /* Debug */,
+				A69860E62FE446CD0095E066 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A69860B92FE446CC0095E066 /* Project object */;
+}
