@@ -16,8 +16,15 @@
 		A69860D72FE446CC0095E066 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860D62FE446CC0095E066 /* Default.png */; };
 		A69860D92FE446CC0095E066 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860D82FE446CC0095E066 /* Default@2x.png */; };
 		A69860DB2FE446CC0095E066 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860DA2FE446CC0095E066 /* Default-568h@2x.png */; };
-		A69860DE2FE446CC0095E066 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69860DC2FE446CC0095E066 /* MainStoryboard.storyboard */; };
 		A69860E12FE446CD0095E066 /* PokeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69860E02FE446CD0095E066 /* PokeViewController.m */; };
+		A69860E82FE4479D0095E066 /* asu_pid.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = A69860E72FE4479D0095E066 /* asu_pid.entitlements */; };
+		A69860EE2FE448240095E066 /* blackPoke-solid-color-image.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860EA2FE448240095E066 /* blackPoke-solid-color-image.png */; };
+		A69860EF2FE448240095E066 /* PokeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69860EB2FE448240095E066 /* PokeStoryboard.storyboard */; };
+		A69860F02FE448240095E066 /* redPoke-solid-color-image.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860EC2FE448240095E066 /* redPoke-solid-color-image.png */; };
+		A69860F12FE448240095E066 /* whitePoke-solid-color-image.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860ED2FE448240095E066 /* whitePoke-solid-color-image.png */; };
+		A69860F52FE7F5C10095E066 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860F32FE7F5C00095E066 /* Icon.png */; };
+		A69860F62FE7F5C10095E066 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860F42FE7F5C10095E066 /* Icon@2x.png */; };
+		A69860F82FE81EDE0095E066 /* mainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860F72FE81EDE0095E066 /* mainMenu.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +41,16 @@
 		A69860D62FE446CC0095E066 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A69860D82FE446CC0095E066 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A69860DA2FE446CC0095E066 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		A69860DD2FE446CC0095E066 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A69860DF2FE446CD0095E066 /* PokeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokeViewController.h; sourceTree = "<group>"; };
 		A69860E02FE446CD0095E066 /* PokeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokeViewController.m; sourceTree = "<group>"; };
+		A69860E72FE4479D0095E066 /* asu_pid.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = asu_pid.entitlements; sourceTree = "<group>"; };
+		A69860EA2FE448240095E066 /* blackPoke-solid-color-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackPoke-solid-color-image.png"; sourceTree = "<group>"; };
+		A69860EB2FE448240095E066 /* PokeStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PokeStoryboard.storyboard; path = ../assets/PokeStoryboard.storyboard; sourceTree = "<group>"; };
+		A69860EC2FE448240095E066 /* redPoke-solid-color-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redPoke-solid-color-image.png"; sourceTree = "<group>"; };
+		A69860ED2FE448240095E066 /* whitePoke-solid-color-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whitePoke-solid-color-image.png"; sourceTree = "<group>"; };
+		A69860F32FE7F5C00095E066 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		A69860F42FE7F5C10095E066 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		A69860F72FE81EDE0095E066 /* mainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainMenu.png; path = Launch/mainMenu.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +97,11 @@
 		A69860CA2FE446CC0095E066 /* PokéBuilder Legacy */ = {
 			isa = PBXGroup;
 			children = (
+				A69860E72FE4479D0095E066 /* asu_pid.entitlements */,
+				A69860E92FE448240095E066 /* assets */,
 				A69860D32FE446CC0095E066 /* PokeAppDelegate.h */,
 				A69860D42FE446CC0095E066 /* PokeAppDelegate.m */,
-				A69860DC2FE446CC0095E066 /* MainStoryboard.storyboard */,
+				A69860EB2FE448240095E066 /* PokeStoryboard.storyboard */,
 				A69860DF2FE446CD0095E066 /* PokeViewController.h */,
 				A69860E02FE446CD0095E066 /* PokeViewController.m */,
 				A69860CB2FE446CC0095E066 /* Supporting Files */,
@@ -105,6 +121,27 @@
 				A69860DA2FE446CC0095E066 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A69860E92FE448240095E066 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				A69860F22FE7F5C00095E066 /* Icon */,
+				A69860EA2FE448240095E066 /* blackPoke-solid-color-image.png */,
+				A69860EC2FE448240095E066 /* redPoke-solid-color-image.png */,
+				A69860ED2FE448240095E066 /* whitePoke-solid-color-image.png */,
+				A69860F72FE81EDE0095E066 /* mainMenu.png */,
+			);
+			path = assets;
+			sourceTree = SOURCE_ROOT;
+		};
+		A69860F22FE7F5C00095E066 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				A69860F32FE7F5C00095E066 /* Icon.png */,
+				A69860F42FE7F5C10095E066 /* Icon@2x.png */,
+			);
+			path = Icon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +200,14 @@
 				A69860D72FE446CC0095E066 /* Default.png in Resources */,
 				A69860D92FE446CC0095E066 /* Default@2x.png in Resources */,
 				A69860DB2FE446CC0095E066 /* Default-568h@2x.png in Resources */,
-				A69860DE2FE446CC0095E066 /* MainStoryboard.storyboard in Resources */,
+				A69860E82FE4479D0095E066 /* asu_pid.entitlements in Resources */,
+				A69860EE2FE448240095E066 /* blackPoke-solid-color-image.png in Resources */,
+				A69860EF2FE448240095E066 /* PokeStoryboard.storyboard in Resources */,
+				A69860F02FE448240095E066 /* redPoke-solid-color-image.png in Resources */,
+				A69860F12FE448240095E066 /* whitePoke-solid-color-image.png in Resources */,
+				A69860F52FE7F5C10095E066 /* Icon.png in Resources */,
+				A69860F62FE7F5C10095E066 /* Icon@2x.png in Resources */,
+				A69860F82FE81EDE0095E066 /* mainMenu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,14 +235,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		A69860DC2FE446CC0095E066 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A69860DD2FE446CC0095E066 /* en */,
-			);
-			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -214,7 +250,9 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = "PokéBuilder Legacy/asu_pid.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -227,8 +265,10 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -245,14 +285,18 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = "PokéBuilder Legacy/asu_pid.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -261,10 +305,13 @@
 		A69860E52FE446CD0095E066 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "PokéBuilder Legacy/asu_pid.entitlements";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PokéBuilder Legacy/PokéBuilder Legacy-Prefix.pch";
 				INFOPLIST_FILE = "PokéBuilder Legacy/PokéBuilder Legacy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -272,10 +319,13 @@
 		A69860E62FE446CD0095E066 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "PokéBuilder Legacy/asu_pid.entitlements";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PokéBuilder Legacy/PokéBuilder Legacy-Prefix.pch";
 				INFOPLIST_FILE = "PokéBuilder Legacy/PokéBuilder Legacy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -299,6 +349,7 @@
 				A69860E62FE446CD0095E066 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
