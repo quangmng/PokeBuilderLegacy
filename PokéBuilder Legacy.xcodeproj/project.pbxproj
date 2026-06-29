@@ -19,12 +19,17 @@
 		A69860E12FE446CD0095E066 /* PokeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69860E02FE446CD0095E066 /* PokeViewController.m */; };
 		A69860E82FE4479D0095E066 /* asu_pid.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = A69860E72FE4479D0095E066 /* asu_pid.entitlements */; };
 		A69860EE2FE448240095E066 /* blackPoke-solid-color-image.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860EA2FE448240095E066 /* blackPoke-solid-color-image.png */; };
-		A69860EF2FE448240095E066 /* PokeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A69860EB2FE448240095E066 /* PokeStoryboard.storyboard */; };
 		A69860F02FE448240095E066 /* redPoke-solid-color-image.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860EC2FE448240095E066 /* redPoke-solid-color-image.png */; };
 		A69860F12FE448240095E066 /* whitePoke-solid-color-image.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860ED2FE448240095E066 /* whitePoke-solid-color-image.png */; };
 		A69860F52FE7F5C10095E066 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860F32FE7F5C00095E066 /* Icon.png */; };
 		A69860F62FE7F5C10095E066 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860F42FE7F5C10095E066 /* Icon@2x.png */; };
 		A69860F82FE81EDE0095E066 /* mainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860F72FE81EDE0095E066 /* mainMenu.png */; };
+		A6C9573B2FEECEFD00D08D2E /* tab-analysis.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C957372FEECEFD00D08D2E /* tab-analysis.png */; };
+		A6C9573C2FEECEFD00D08D2E /* tab-analysis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C957382FEECEFD00D08D2E /* tab-analysis@2x.png */; };
+		A6C9573D2FEECEFD00D08D2E /* tab-pokeball.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C957392FEECEFD00D08D2E /* tab-pokeball.png */; };
+		A6C9573E2FEECEFD00D08D2E /* tab-pokeball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C9573A2FEECEFD00D08D2E /* tab-pokeball@2x.png */; };
+		A6C957402FEECF4200D08D2E /* PokeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C9573F2FEECF4200D08D2E /* PokeStoryboard.storyboard */; };
+		A6C957452FEF8F8000D08D2E /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C957442FEF8F8000D08D2E /* MainView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,12 +50,17 @@
 		A69860E02FE446CD0095E066 /* PokeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokeViewController.m; sourceTree = "<group>"; };
 		A69860E72FE4479D0095E066 /* asu_pid.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = asu_pid.entitlements; sourceTree = "<group>"; };
 		A69860EA2FE448240095E066 /* blackPoke-solid-color-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackPoke-solid-color-image.png"; sourceTree = "<group>"; };
-		A69860EB2FE448240095E066 /* PokeStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PokeStoryboard.storyboard; path = ../assets/PokeStoryboard.storyboard; sourceTree = "<group>"; };
 		A69860EC2FE448240095E066 /* redPoke-solid-color-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redPoke-solid-color-image.png"; sourceTree = "<group>"; };
 		A69860ED2FE448240095E066 /* whitePoke-solid-color-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whitePoke-solid-color-image.png"; sourceTree = "<group>"; };
 		A69860F32FE7F5C00095E066 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		A69860F42FE7F5C10095E066 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		A69860F72FE81EDE0095E066 /* mainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainMenu.png; path = Launch/mainMenu.png; sourceTree = "<group>"; };
+		A6C957372FEECEFD00D08D2E /* tab-analysis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-analysis.png"; sourceTree = "<group>"; };
+		A6C957382FEECEFD00D08D2E /* tab-analysis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-analysis@2x.png"; sourceTree = "<group>"; };
+		A6C957392FEECEFD00D08D2E /* tab-pokeball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-pokeball.png"; sourceTree = "<group>"; };
+		A6C9573A2FEECEFD00D08D2E /* tab-pokeball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-pokeball@2x.png"; sourceTree = "<group>"; };
+		A6C9573F2FEECF4200D08D2E /* PokeStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PokeStoryboard.storyboard; sourceTree = "<group>"; };
+		A6C957442FEF8F8000D08D2E /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,13 +107,13 @@
 		A69860CA2FE446CC0095E066 /* PokéBuilder Legacy */ = {
 			isa = PBXGroup;
 			children = (
+				A6C957432FEF8F0E00D08D2E /* Models */,
+				A6C957422FEF8F0500D08D2E /* Controllers */,
+				A6C957412FEF8EFC00D08D2E /* Views */,
 				A69860E72FE4479D0095E066 /* asu_pid.entitlements */,
 				A69860E92FE448240095E066 /* assets */,
 				A69860D32FE446CC0095E066 /* PokeAppDelegate.h */,
 				A69860D42FE446CC0095E066 /* PokeAppDelegate.m */,
-				A69860EB2FE448240095E066 /* PokeStoryboard.storyboard */,
-				A69860DF2FE446CD0095E066 /* PokeViewController.h */,
-				A69860E02FE446CD0095E066 /* PokeViewController.m */,
 				A69860CB2FE446CC0095E066 /* Supporting Files */,
 			);
 			path = "PokéBuilder Legacy";
@@ -126,6 +136,7 @@
 		A69860E92FE448240095E066 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				A6C957362FEECEFD00D08D2E /* Tab */,
 				A69860F22FE7F5C00095E066 /* Icon */,
 				A69860EA2FE448240095E066 /* blackPoke-solid-color-image.png */,
 				A69860EC2FE448240095E066 /* redPoke-solid-color-image.png */,
@@ -142,6 +153,50 @@
 				A69860F42FE7F5C10095E066 /* Icon@2x.png */,
 			);
 			path = Icon;
+			sourceTree = "<group>";
+		};
+		A698B18F2FF01A7600CABAB9 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				A6C957442FEF8F8000D08D2E /* MainView.xib */,
+			);
+			name = XIB;
+			sourceTree = "<group>";
+		};
+		A6C957362FEECEFD00D08D2E /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				A6C957372FEECEFD00D08D2E /* tab-analysis.png */,
+				A6C957382FEECEFD00D08D2E /* tab-analysis@2x.png */,
+				A6C957392FEECEFD00D08D2E /* tab-pokeball.png */,
+				A6C9573A2FEECEFD00D08D2E /* tab-pokeball@2x.png */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		A6C957412FEF8EFC00D08D2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A698B18F2FF01A7600CABAB9 /* XIB */,
+				A6C9573F2FEECF4200D08D2E /* PokeStoryboard.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A6C957422FEF8F0500D08D2E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A69860DF2FE446CD0095E066 /* PokeViewController.h */,
+				A69860E02FE446CD0095E066 /* PokeViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A6C957432FEF8F0E00D08D2E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,12 +257,17 @@
 				A69860DB2FE446CC0095E066 /* Default-568h@2x.png in Resources */,
 				A69860E82FE4479D0095E066 /* asu_pid.entitlements in Resources */,
 				A69860EE2FE448240095E066 /* blackPoke-solid-color-image.png in Resources */,
-				A69860EF2FE448240095E066 /* PokeStoryboard.storyboard in Resources */,
 				A69860F02FE448240095E066 /* redPoke-solid-color-image.png in Resources */,
 				A69860F12FE448240095E066 /* whitePoke-solid-color-image.png in Resources */,
 				A69860F52FE7F5C10095E066 /* Icon.png in Resources */,
 				A69860F62FE7F5C10095E066 /* Icon@2x.png in Resources */,
 				A69860F82FE81EDE0095E066 /* mainMenu.png in Resources */,
+				A6C9573B2FEECEFD00D08D2E /* tab-analysis.png in Resources */,
+				A6C9573C2FEECEFD00D08D2E /* tab-analysis@2x.png in Resources */,
+				A6C9573D2FEECEFD00D08D2E /* tab-pokeball.png in Resources */,
+				A6C9573E2FEECEFD00D08D2E /* tab-pokeball@2x.png in Resources */,
+				A6C957402FEECF4200D08D2E /* PokeStoryboard.storyboard in Resources */,
+				A6C957452FEF8F8000D08D2E /* MainView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
