@@ -24,6 +24,9 @@
 		A69860F52FE7F5C10095E066 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860F32FE7F5C00095E066 /* Icon.png */; };
 		A69860F62FE7F5C10095E066 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860F42FE7F5C10095E066 /* Icon@2x.png */; };
 		A69860F82FE81EDE0095E066 /* mainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860F72FE81EDE0095E066 /* mainMenu.png */; };
+		A69DB12A2FF28CC0009EDD67 /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = A69DB1292FF28CC0009EDD67 /* Team.m */; };
+		A69DB12D2FF28DFF009EDD67 /* AppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69DB12C2FF28DFF009EDD67 /* AppInfoViewController.m */; };
+		A69DB12F2FF28F13009EDD67 /* PokeBuilder.xib in Resources */ = {isa = PBXBuildFile; fileRef = A69DB12E2FF28F13009EDD67 /* PokeBuilder.xib */; };
 		A6C9573B2FEECEFD00D08D2E /* tab-analysis.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C957372FEECEFD00D08D2E /* tab-analysis.png */; };
 		A6C9573C2FEECEFD00D08D2E /* tab-analysis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C957382FEECEFD00D08D2E /* tab-analysis@2x.png */; };
 		A6C9573D2FEECEFD00D08D2E /* tab-pokeball.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C957392FEECEFD00D08D2E /* tab-pokeball.png */; };
@@ -55,6 +58,11 @@
 		A69860F32FE7F5C00095E066 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		A69860F42FE7F5C10095E066 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		A69860F72FE81EDE0095E066 /* mainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainMenu.png; path = Launch/mainMenu.png; sourceTree = "<group>"; };
+		A69DB1282FF28CC0009EDD67 /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Team.h; path = Model/Team.h; sourceTree = "<group>"; };
+		A69DB1292FF28CC0009EDD67 /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Team.m; path = Model/Team.m; sourceTree = "<group>"; };
+		A69DB12B2FF28DFF009EDD67 /* AppInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppInfoViewController.h; path = Controller/AppInfoViewController.h; sourceTree = "<group>"; };
+		A69DB12C2FF28DFF009EDD67 /* AppInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppInfoViewController.m; path = Controller/AppInfoViewController.m; sourceTree = "<group>"; };
+		A69DB12E2FF28F13009EDD67 /* PokeBuilder.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PokeBuilder.xib; sourceTree = "<group>"; };
 		A6C957372FEECEFD00D08D2E /* tab-analysis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-analysis.png"; sourceTree = "<group>"; };
 		A6C957382FEECEFD00D08D2E /* tab-analysis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-analysis@2x.png"; sourceTree = "<group>"; };
 		A6C957392FEECEFD00D08D2E /* tab-pokeball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-pokeball.png"; sourceTree = "<group>"; };
@@ -159,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				A6C957442FEF8F8000D08D2E /* MainView.xib */,
+				A69DB12E2FF28F13009EDD67 /* PokeBuilder.xib */,
 			);
 			name = XIB;
 			sourceTree = "<group>";
@@ -188,6 +197,8 @@
 			children = (
 				A69860DF2FE446CD0095E066 /* PokeViewController.h */,
 				A69860E02FE446CD0095E066 /* PokeViewController.m */,
+				A69DB12B2FF28DFF009EDD67 /* AppInfoViewController.h */,
+				A69DB12C2FF28DFF009EDD67 /* AppInfoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -195,6 +206,8 @@
 		A6C957432FEF8F0E00D08D2E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A69DB1282FF28CC0009EDD67 /* Team.h */,
+				A69DB1292FF28CC0009EDD67 /* Team.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -268,6 +281,7 @@
 				A6C9573E2FEECEFD00D08D2E /* tab-pokeball@2x.png in Resources */,
 				A6C957402FEECF4200D08D2E /* PokeStoryboard.storyboard in Resources */,
 				A6C957452FEF8F8000D08D2E /* MainView.xib in Resources */,
+				A69DB12F2FF28F13009EDD67 /* PokeBuilder.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +295,8 @@
 				A69860D12FE446CC0095E066 /* main.m in Sources */,
 				A69860D52FE446CC0095E066 /* PokeAppDelegate.m in Sources */,
 				A69860E12FE446CD0095E066 /* PokeViewController.m in Sources */,
+				A69DB12A2FF28CC0009EDD67 /* Team.m in Sources */,
+				A69DB12D2FF28DFF009EDD67 /* AppInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

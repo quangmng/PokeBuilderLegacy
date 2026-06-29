@@ -14,11 +14,6 @@
 
 @implementation PokeViewController
 
-//-(IBAction)hyperlinkQuang {
-//
-//
-//}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PokeViewController : UIViewController {
-    
-}
+@interface PokeViewController : UIViewController
 
-//-(IBAction)hyperlinkQuang;
+//- (IBAction)hyperlinkQuang;
 
 @end
