@@ -25,6 +25,7 @@
 
 - (IBAction)hyperlinkQuang {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/quangmng/PokeBuilderLegacy"]];
+    printf("link clicked");
 }
 
 - (IBAction)hyperlinkOG {

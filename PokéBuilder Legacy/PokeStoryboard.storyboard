@@ -345,18 +345,6 @@
         <image name="tab-analysis.png" width="30" height="30"/>
         <image name="tab-pokeball.png" width="30" height="30"/>
     </resources>
-    <classes>
-        <class className="AppInfoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AppInfoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="hyperlinkOG"/>
-                <relationship kind="action" name="hyperlinkQuang"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

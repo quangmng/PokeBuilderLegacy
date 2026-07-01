@@ -10,6 +10,7 @@
 
 @interface Team : NSObject
 
+
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSInteger *id;
  
