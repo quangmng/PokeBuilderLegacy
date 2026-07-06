@@ -55,9 +55,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="jIp-fw-WJc" kind="modal" modalTransitionStyle="partialCurl" id="oKu-YK-lMs"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnb-1h-bcL">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -205,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iP9-uD-a9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-66" y="774"/>
+            <point key="canvasLocation" x="437" y="741"/>
         </scene>
         <!--View Controller - Analysis-->
         <scene sceneID="7d1-GC-Blf">
@@ -246,21 +243,6 @@
             </objects>
             <point key="canvasLocation" x="971" y="290"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="kmj-zk-sy9">
-            <objects>
-                <viewController id="Rhh-YP-Gfz" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="S61-Of-Soe">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Ezh-6D-Kpd"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V0z-Cw-sGa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1485" y="-329"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZJS-aE-qvo">
             <objects>
@@ -280,41 +262,6 @@
             </objects>
             <point key="canvasLocation" x="437" y="117"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Pt7-r8-zCg">
-            <objects>
-                <navigationController id="jIp-fw-WJc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wBu-4Z-CVa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="0eP-ma-WFl" kind="relationship" relationship="rootViewController" id="7Z8-dH-dni"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KoW-b3-shB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="437" y="764"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="IYc-Ib-PVC">
-            <objects>
-                <viewController id="0eP-ma-WFl" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Zrn-tg-YEj">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="eTL-a9-c1i">
-                        <barButtonItem key="backBarButtonItem" title="Menu" id="Vzo-pC-Oaj"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fjf-1l-poX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="971" y="1014"/>
-        </scene>
         <!--Navigation Controller - My Teams-->
         <scene sceneID="nB5-5M-6qe">
             <objects>
@@ -330,9 +277,6 @@
                         <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
-                    <connections>
-                        <segue destination="Rhh-YP-Gfz" kind="relationship" relationship="rootViewController" id="EK7-Km-t0X"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QZL-VS-52e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
