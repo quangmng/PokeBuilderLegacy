@@ -8,31 +8,31 @@
 
 #import <Foundation/Foundation.h>
 
-// C-STRUCT:
-// Holds the 6 battle stats as primitive integers.
-typedef struct {
-    NSInteger hp;
-    NSInteger attack;
-    NSInteger defense;
-    NSInteger specialAttack;
-    NSInteger specialDefense;
-    NSInteger speed;
-} PokemonStats;
+// Conforming to NSCopying is critical here so the Pokemon model can clone it safely.
+@interface PokemonStats : NSObject <NSCopying>
 
-//@interface PokemonStats : NSObject
+// Unlike Team, these are read-write properties so they can be mutated after creation.
+@property (nonatomic, assign) NSInteger hp;
+@property (nonatomic, assign) NSInteger attack;
+@property (nonatomic, assign) NSInteger defense;
+@property (nonatomic, assign) NSInteger specialAttack;
+@property (nonatomic, assign) NSInteger specialDefense;
+@property (nonatomic, assign) NSInteger speed;
 
-// Convenience initialisers:
-// Returns a newly minted struct with predefined values.
-PokemonStats PokemonStatsMakeEmptyEVs(void);
-PokemonStats PokemonStatsMakeEmptyIVs(void);
+// Designated Initialiser
+- (instancetype)initWithHP:(NSInteger)hp
+                    attack:(NSInteger)attack
+                   defense:(NSInteger)defense
+             specialAttack:(NSInteger)specialAttack
+            specialDefense:(NSInteger)specialDefense
+                     speed:(NSInteger)speed;
 
-// Mutation: Replaces Swift's 'mutating func'.
-// CRITICAL: We pass a pointer (*stats) so the function modifies the original struct in memory.
-// If didn't use *, it would modify a copy and the original would remain unchanged.
-void PokemonStatsSetStat(PokemonStats *stats, NSString *name, NSInteger value);
+// Factory methods for convenient defaults
++ (instancetype)emptyEVs;
++ (instancetype)emptyIVs;
 
-// Extraction: Replaces Swift's 'getStat'.
-// No pointer needed here because the values are being read only, not changing.
-NSInteger PokemonStatsGetStat(PokemonStats stats, NSString *name);
+// String-based accessors
+- (void)addStatWithName:(NSString *)name value:(NSInteger)value;
+- (NSInteger)getStatWithName:(NSString *)name;
 
-//@end
+@end

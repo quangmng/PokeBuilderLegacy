@@ -7,29 +7,17 @@
 //
 
 #import "Pokemon.h"
+#import "PokemonStats.h"
 
-// The runtime counter ensuring each new Pokemon gets a unique primary key before hitting the DB.
-static NSInteger _nextId = 1;
+static NSInteger sNextId = 1;
+
+// Private C-function for internal clipping logic.
+static NSInteger clipValue(NSInteger value, NSInteger lowerBound, NSInteger upperBound) {
+    // MAX returns the higher of two values, MIN returns the lower.
+    return MAX(lowerBound, MIN(value, upperBound));
+}
 
 @implementation Pokemon
-
-#pragma mark - Constants
-
-+ (NSInteger)maxLevel{
-    return 100;
-}
-+ (NSInteger)minLevel{
-    return 1;
-}
-+ (NSInteger)maxEVs{
-    return 252;
-}
-+ (NSInteger)minEVs{
-    return 0;
-}
-+ (NSInteger)maxMoves{
-    return 4;
-}
 
 #pragma mark - Initialisation
 
@@ -38,113 +26,99 @@ static NSInteger _nextId = 1;
                       item:(NSString *)item
                      level:(NSInteger)level
                    ability:(NSString *)ability
-              effortValues:(PokemonStats)effortValues
-                    nature:(NSString *)nature
-                     moves:(NSArray *)moves {
+              effortValues:(PokemonStats *)effortValues
+                    nature:(NSString *)nature {
     self = [super init];
     if (self) {
-        // Direct assignment to bypass public readonly restrictions
         _pokemonID = pokemonID;
         _pokemonNumber = pokemonNumber;
-        
-        // Guard against NSMutableString hijacking by explicitly copying the inputs
         _item = [item copy];
-        _ability = [ability copy];
-        _nature = [nature copy];
-        
-        // Pass integers and structs through our class validation filters before storing them
         _level = [Pokemon validLevel:level];
+        _ability = [ability copy];
+        // Validating EVs upon initialization
         _effortValues = [Pokemon validEVs:effortValues];
-        
-        // Caps to 4 moves, then store as mutable
-        NSArray *validatedMoves = [Pokemon validMoves:moves];
-        _moves = [[NSMutableArray alloc] initWithArray:validatedMoves];
+        _nature = [nature copy];
     }
     return self;
 }
 
-#pragma mark - Instance Methods
+#pragma mark - Domain Logic (Class Methods)
 
-- (NSString *)getMoveAtIndex:(NSInteger)index {
-    // Guard against NSRangeException crashes. If UI asks for move index 3
-    // but Pokemon only has 2 moves, this safely catches it and returns an empty string.
-    if (index >= 0 && index < self.moves.count) {
-        return [self.moves objectAtIndex:index];
-    }
-    return @"";
-}
-
-#pragma mark - Private Clipping Helper
-
-// STATIC C-FUNCTION:
-// - Runs instantly without Obj-C message-lookup overhead.
-// - 'static' hides it from other files to prevent duplicate-name crashes.
-// - Math: MIN(MAX(value, lowest), highest) forces a number to stay within limits.
-static NSInteger clip(NSInteger value, NSInteger lowerBound, NSInteger upperBound) {
-    return MIN(MAX(value, lowerBound), upperBound);
-}
-
-#pragma mark - Domain Logic & Validation
-
++ (NSInteger)maxLevel { return 100; }
++ (NSInteger)minLevel { return 1; }
++ (NSInteger)maxEVs { return 252; }
++ (NSInteger)minEVs { return 0; }
 
 + (NSInteger)clipEV:(NSInteger)value {
-    return clip(value, [Pokemon minEVs], [Pokemon maxEVs]);
+    return clipValue(value, [self minEVs], [self maxEVs]);
 }
 
 + (NSInteger)validLevel:(NSInteger)level {
-    return clip(level, [Pokemon minLevel], [Pokemon maxLevel]);
+    return clipValue(level, [self minLevel], [self maxLevel]);
 }
 
-+ (NSArray *)validMoves:(NSArray *)moves {
-    if (!moves || moves.count == 0) return @[];
++ (PokemonStats *)validEVs:(PokemonStats *)stats {
+    if (!stats) return nil;
     
-    NSInteger maxCount = [Pokemon maxMoves];
-    if (moves.count <= maxCount) return moves;
-    
-    // Cap arrays larger than 4, discarding excess elements to prevent UI crashes.
-    return [moves subarrayWithRange:NSMakeRange(0, maxCount)];
+    // Speculative initialiser based on the Swift code.
+    // Ensure PokemonStats matches this signature later.
+    return [[PokemonStats alloc] initWithHP:[self clipEV:stats.hp]
+                                     attack:[self clipEV:stats.attack]
+                                    defense:[self clipEV:stats.defense]
+                              specialAttack:[self clipEV:stats.specialAttack]
+                             specialDefense:[self clipEV:stats.specialDefense]
+                                      speed:[self clipEV:stats.speed]];
 }
 
-+ (PokemonStats)validEVs:(PokemonStats)stats {
-    // Creates a new C-struct on the stack, assigns clamped values, and returns it.
-    PokemonStats validatedStats;
-    validatedStats.hp             = [Pokemon clipEV:stats.hp];
-    validatedStats.attack         = [Pokemon clipEV:stats.attack];
-    validatedStats.defense        = [Pokemon clipEV:stats.defense];
-    validatedStats.specialAttack  = [Pokemon clipEV:stats.specialAttack];
-    validatedStats.specialDefense = [Pokemon clipEV:stats.specialDefense];
-    validatedStats.speed          = [Pokemon clipEV:stats.speed];
-    
-    return validatedStats;
-}
-
-#pragma mark - ID Generation
+#pragma mark - IDGeneratable Protocol
 
 + (NSInteger)getUniqueId {
-    NSInteger currentId = _nextId;
-    _nextId++;
-    return currentId;
+    @synchronized (self) {
+        NSInteger currentId = sNextId;
+        sNextId++;
+        return currentId;
+    }
 }
 
 + (void)resetIdCounterToMaximum:(NSInteger)maximum {
-    // Syncs the runtime counter to the highest SQLite primary key on app launch.
-    _nextId = maximum;
+    @synchronized (self) {
+        sNextId = maximum;
+    }
+}
+
+#pragma mark - Equatable / Hashable
+
+- (BOOL)isEqual:(id)object {
+    if (self == object) return YES;
+    if (![object isKindOfClass:[Pokemon class]]) return NO;
+    
+    Pokemon *other = (Pokemon *)object;
+    return self.pokemonID == other.pokemonID &&
+    self.pokemonNumber == other.pokemonNumber &&
+    self.level == other.level &&
+    [self.item isEqualToString:other.item] &&
+    [self.ability isEqualToString:other.ability] &&
+    [self.nature isEqualToString:other.nature] &&
+    [self.effortValues isEqual:other.effortValues];
+}
+
+- (NSUInteger)hash {
+    // Bitwise XORing the hashes and primitives together.
+    return self.pokemonID ^ self.pokemonNumber ^ self.level ^
+    self.item.hash ^ self.ability.hash ^ self.nature.hash ^ self.effortValues.hash;
 }
 
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone *)zone {
-    // Standard protocol requirement to duplicate this object into a new memory space.
     Pokemon *copy = [[[self class] allocWithZone:zone] initWithID:self.pokemonID
                                                     pokemonNumber:self.pokemonNumber
                                                              item:self.item
                                                             level:self.level
                                                           ability:self.ability
                                                      effortValues:self.effortValues
-                                                           nature:self.nature
-                                                            moves:self.moves];
+                                                           nature:self.nature];
     return copy;
 }
-
 
 @end

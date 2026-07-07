@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A600167A2FFD600900C24F23 /* PokemonNamesFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A60016792FFD600900C24F23 /* PokemonNamesFetcher.m */; };
+		A600167D2FFD62A000C24F23 /* BattleDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A600167C2FFD62A000C24F23 /* BattleDataFetcher.m */; };
+		A60016802FFD669F00C24F23 /* DatabaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = A600167F2FFD669F00C24F23 /* DatabaseController.m */; };
 		A610CAC32FFBEC4700C0C326 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = A610CAC22FFBEC4700C0C326 /* Pokemon.m */; };
 		A610CAC62FFCD6EA00C0C326 /* PokemonStats.m in Sources */ = {isa = PBXBuildFile; fileRef = A610CAC52FFCD6EA00C0C326 /* PokemonStats.m */; };
 		A610CAC92FFD43A000C0C326 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A610CAC82FFD43A000C0C326 /* .gitignore */; };
@@ -36,9 +39,18 @@
 		A6C9573D2FEECEFD00D08D2E /* tab-pokeball.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C957392FEECEFD00D08D2E /* tab-pokeball.png */; };
 		A6C9573E2FEECEFD00D08D2E /* tab-pokeball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C9573A2FEECEFD00D08D2E /* tab-pokeball@2x.png */; };
 		A6C957402FEECF4200D08D2E /* PokeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C9573F2FEECF4200D08D2E /* PokeStoryboard.storyboard */; };
+		A6F455182FFD531400B08E0F /* Nature.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F455172FFD531400B08E0F /* Nature.m */; };
+		A6F4551B2FFD575600B08E0F /* NSString+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F4551A2FFD575600B08E0F /* NSString+Formatting.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A60016742FFD5D2A00C24F23 /* APIFetchable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIFetchable.h; path = Model/Protocols/APIFetchable.h; sourceTree = "<group>"; };
+		A60016782FFD600900C24F23 /* PokemonNamesFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PokemonNamesFetcher.h; path = Model/PokemonNamesFetcher.h; sourceTree = "<group>"; };
+		A60016792FFD600900C24F23 /* PokemonNamesFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PokemonNamesFetcher.m; path = Model/PokemonNamesFetcher.m; sourceTree = "<group>"; };
+		A600167B2FFD62A000C24F23 /* BattleDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BattleDataFetcher.h; path = Model/BattleDataFetcher.h; sourceTree = "<group>"; };
+		A600167C2FFD62A000C24F23 /* BattleDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BattleDataFetcher.m; path = Model/BattleDataFetcher.m; sourceTree = "<group>"; };
+		A600167E2FFD669F00C24F23 /* DatabaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatabaseController.h; path = Model/DatabaseController.h; sourceTree = "<group>"; };
+		A600167F2FFD669F00C24F23 /* DatabaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseController.m; path = Model/DatabaseController.m; sourceTree = "<group>"; };
 		A610CAC12FFBEC4700C0C326 /* Pokemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pokemon.h; path = Model/Pokemon.h; sourceTree = "<group>"; };
 		A610CAC22FFBEC4700C0C326 /* Pokemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pokemon.m; path = Model/Pokemon.m; sourceTree = "<group>"; };
 		A610CAC42FFCD6EA00C0C326 /* PokemonStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PokemonStats.h; path = Model/PokemonStats.h; sourceTree = "<group>"; };
@@ -78,6 +90,10 @@
 		A6C957392FEECEFD00D08D2E /* tab-pokeball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-pokeball.png"; sourceTree = "<group>"; };
 		A6C9573A2FEECEFD00D08D2E /* tab-pokeball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-pokeball@2x.png"; sourceTree = "<group>"; };
 		A6C9573F2FEECF4200D08D2E /* PokeStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PokeStoryboard.storyboard; sourceTree = "<group>"; };
+		A6F455162FFD531400B08E0F /* Nature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Nature.h; path = Model/Nature.h; sourceTree = "<group>"; };
+		A6F455172FFD531400B08E0F /* Nature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Nature.m; path = Model/Nature.m; sourceTree = "<group>"; };
+		A6F455192FFD575600B08E0F /* NSString+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Formatting.h"; path = "Model/NSString+Formatting.h"; sourceTree = "<group>"; };
+		A6F4551A2FFD575600B08E0F /* NSString+Formatting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Formatting.m"; path = "Model/NSString+Formatting.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				A610CAC72FFCDD6200C0C326 /* IDGeneratable.h */,
+				A60016742FFD5D2A00C24F23 /* APIFetchable.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -225,13 +242,23 @@
 		A6C957432FEF8F0E00D08D2E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A610CAC42FFCD6EA00C0C326 /* PokemonStats.h */,
-				A610CAC52FFCD6EA00C0C326 /* PokemonStats.m */,
 				A6636CDF2FF2B01D00C01EC1 /* Protocols */,
 				A69DB1282FF28CC0009EDD67 /* Team.h */,
 				A69DB1292FF28CC0009EDD67 /* Team.m */,
+				A60016782FFD600900C24F23 /* PokemonNamesFetcher.h */,
+				A60016792FFD600900C24F23 /* PokemonNamesFetcher.m */,
+				A610CAC42FFCD6EA00C0C326 /* PokemonStats.h */,
+				A610CAC52FFCD6EA00C0C326 /* PokemonStats.m */,
 				A610CAC12FFBEC4700C0C326 /* Pokemon.h */,
 				A610CAC22FFBEC4700C0C326 /* Pokemon.m */,
+				A6F455162FFD531400B08E0F /* Nature.h */,
+				A6F455172FFD531400B08E0F /* Nature.m */,
+				A6F455192FFD575600B08E0F /* NSString+Formatting.h */,
+				A6F4551A2FFD575600B08E0F /* NSString+Formatting.m */,
+				A600167B2FFD62A000C24F23 /* BattleDataFetcher.h */,
+				A600167C2FFD62A000C24F23 /* BattleDataFetcher.m */,
+				A600167E2FFD669F00C24F23 /* DatabaseController.h */,
+				A600167F2FFD669F00C24F23 /* DatabaseController.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -323,6 +350,11 @@
 				A69DB12D2FF28DFF009EDD67 /* AppInfoViewController.m in Sources */,
 				A610CAC32FFBEC4700C0C326 /* Pokemon.m in Sources */,
 				A610CAC62FFCD6EA00C0C326 /* PokemonStats.m in Sources */,
+				A6F455182FFD531400B08E0F /* Nature.m in Sources */,
+				A6F4551B2FFD575600B08E0F /* NSString+Formatting.m in Sources */,
+				A600167A2FFD600900C24F23 /* PokemonNamesFetcher.m in Sources */,
+				A600167D2FFD62A000C24F23 /* BattleDataFetcher.m in Sources */,
+				A60016802FFD669F00C24F23 /* DatabaseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
