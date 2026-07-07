@@ -18,11 +18,11 @@ typedef struct {
     NSInteger speed;
 } PokemonStats;
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 @interface Pokemon : NSObject <NSCopying>
 
-// Read-only to prevent accidental overwrites that would corrupt SQLite linkage.
+// Read-only to prevent accidental overwrites that would corrupt SQLite db.
 @property (nonatomic, assign, readonly) NSInteger pokemonID;
 
 // PokéAPI lookup ID. Also read-only since a Pikachu cannot suddenly become a Charizard.

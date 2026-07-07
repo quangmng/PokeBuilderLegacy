@@ -7,29 +7,30 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IDGeneratable.h"
 
-@interface Team : NSObject <NSCopying>
+// Team inherits from NSObject and conforms to IDGeneratable
+@interface Team : NSObject <IDGeneratable, NSCopying>
 
-// readonly for values meant to be immutable, strong/assign for others
-@property (nonatomic, strong) NSString *name;
+// Swift's `id` property becomes `teamID` because `id` is a reserved keyword in Objective-C.
 @property (nonatomic, assign, readonly) NSInteger teamID;
-@property (nonatomic, strong) NSMutableArray *pokemonIDs;
+@property (nonatomic, copy, readonly) NSString *name;
 
-// Class constant
-+ (NSInteger)maxPokemon;
+// Exposing an immutable array to the public to prevent external modification.
+@property (nonatomic, copy, readonly) NSArray *pokemonIDs;
 
-// Initialise
-- (instancetype)initWithID:(NSInteger)teamID name:(NSString *)name pokemonIDs:(NSArray *)pokemonIDs;
+// Designated initializer matching your Swift properties
+- (instancetype)initWithID:(NSInteger)teamID
+                      name:(NSString *)name
+                pokemonIDs:(NSArray *)pokemonIDs;
 
-// Instance Methods
-- (NSNumber *)getPokemonIDAtIndex:(NSInteger)index; // Returns NSNumber or nil if empty
-- (void)addPokemonWithID:(NSInteger)pokemonID; 
 
-// Protocol Conformance
-+ (NSInteger)getUniqueId;
-+ (void)resetIdCounterToMaximum:(NSInteger)maximum;
+// Methods
+- (NSNumber *)pokemonIDAtIndex:(NSUInteger)index;
+- (void)addPokemonWithID:(NSInteger)pokemonID;
 
-// Domain Logic
-+ (NSArray *)validPokemon:(NSArray *)pokemonList;
- 
+// Static / Class methods
++ (NSUInteger)maxPokemon;
++ (NSArray *)validPokemonList:(NSArray *)pokemonList;
+
 @end

@@ -8,14 +8,16 @@
 
 #import "Team.h"
 
-static NSInteger _nextId = 1;
+// Static internal counter for ID generation.
+static NSInteger sNextId = 1;
+
+// Class Extension: A private continuation of the header file.
+@interface Team ()
+// Private mutable backing array for pokemonIDs.
+@property (nonatomic, strong) NSMutableArray *mutablePokemonIDs;
+@end
 
 @implementation Team
-
-// Class constant
-+ (NSInteger)maxPokemon {
-    return 6;
-}
 
 #pragma mark - Initialisation
 
@@ -28,58 +30,93 @@ static NSInteger _nextId = 1;
         // Get copy of name in case of accidental edit somewhere
         _name = [name copy];
         // Caps incoming array at 6 Pokémon, copies to mutable array for append/remove
-        NSArray *validated = [Team validPokemon:pokemonIDs];
-        _pokemonIDs = [[NSMutableArray alloc] initWithArray:validated];
+        NSArray *validIDs = [Team validPokemonList:pokemonIDs];
+        _mutablePokemonIDs = [NSMutableArray arrayWithArray:validIDs];
     }
     return self;
 }
 
-#pragma mark - Convenience Operations
+#pragma mark - Accessors
+
+- (NSArray *)pokemonIDs {
+    return [_mutablePokemonIDs copy];
+}
+
+#pragma mark - Instance Methods
 
 // Getting the Pokémon at a particular position, when less than 6 Pokémon are contained.
-- (NSNumber *)getPokemonIDAtIndex:(NSInteger)index {
-    if (index >= 0 && index < self.pokemonIDs.count) {
+- (NSNumber *)pokemonIDAtIndex:(NSUInteger)index {
+    if (index < self.pokemonIDs.count) {
         return [self.pokemonIDs objectAtIndex:index];
     }
     return nil;
 }
 // Adding Pokémon, as long as it doesn't exceed the limit.
 - (void)addPokemonWithID:(NSInteger)pokemonID {
-    if (self.pokemonIDs.count < [Team maxPokemon]) {
-        [self.pokemonIDs addObject:[NSNumber numberWithInteger:pokemonID]];
+    if (self.mutablePokemonIDs.count < [Team maxPokemon]) {
+        [self.mutablePokemonIDs addObject:@(pokemonID)];
     }
 }
 
-#pragma mark - ID Generation
+#pragma mark - Domain Logic
 
-+ (NSInteger)getUniqueId {
-    NSInteger currentId = _nextId;
-    _nextId++; // Increment the teamID
-    return currentId;
+// Class constant, unsigned integer
++ (NSUInteger)maxPokemon {
+    return 6;
 }
 
-// Used when loading pre-existing SQLite data on app launch.
-// Sets the runtime counter to match the highest database primary key so new teams don't cause ID clashes.
-+ (void)resetIdCounterToMaximum:(NSInteger)maximum {
-    _nextId = maximum;
-}
-
-+ (NSArray *)validPokemon:(NSArray *)pokemonList {
-    // Dealing with uninitiallised arrays
++ (NSArray *)validPokemonList:(NSArray *)pokemonList {
+    // handle nil or empty arrays safely.
     if (!pokemonList || pokemonList.count == 0) {
         return @[];
     }
     
+
     // Limit to only 6 Pokémon
-    NSInteger maxCount = [Team maxPokemon];
-    if (pokemonList.count <= maxCount) {
-        return pokemonList;
-    }
-    // Only keeping 6 moves per Pokémon list
-    NSRange range = NSMakeRange(0, maxCount);
+    NSUInteger max = [Team maxPokemon];
+    if (pokemonList.count <= max) {
+    return pokemonList;
+}
+    // extracting safe
+    NSRange range = NSMakeRange(0, max);
     return [pokemonList subarrayWithRange:range];
+
+}
+#pragma mark - IDGeneratable Protocol
+
++ (NSInteger)getUniqueId {
+    @synchronized (self) { // safeguard needed to manage its state safely 
+        NSInteger currentId = sNextId;
+        sNextId++;
+        return currentId;
+    }
+}
+// Used when loading pre-existing SQLite data on app launch.
+// Sets the runtime counter to match the highest database primary key so new teams don't cause ID clashes.
++ (void)resetIdCounterToMaximum:(NSInteger)maximum {
+    @synchronized (self){
+        sNextId = maximum;
+    }
 }
 
+#pragma mark - Equatable / Hashable
+
+// Required to compare two Team objects.
+- (BOOL)isEqual:(id)object {
+    if (self == object) return YES;
+    if (![object isKindOfClass:[Team class]]) return NO;
+    
+    Team *other = (Team *)object;
+    return self.teamID == other.teamID &&
+    [self.name isEqualToString:other.name] &&
+    [self.pokemonIDs isEqualToArray:other.pokemonIDs];
+}
+
+- (NSUInteger)hash {
+    return self.teamID ^ self.name.hash ^ self.pokemonIDs.hash;
+}
+
+#pragma mark - NSCopying
 // Creating a new Team w/o modifying the og. instance
 - (id)copyWithZone:(NSZone *)zone {
     Team *copy = [[[self class] allocWithZone:zone] initWithID:self.teamID

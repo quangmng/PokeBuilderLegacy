@@ -68,7 +68,6 @@
 							<string key="NSResourceName">tab-analysis.png</string>
 						</object>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUITabBar" ref="281672355"/>
 					</object>
 					<reference key="IBUIParentViewController" ref="551238401"/>
 					<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
@@ -87,7 +86,6 @@
 								<string key="NSResourceName">tab-pokeball.png</string>
 							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-							<reference key="IBUITabBar" ref="281672355"/>
 						</object>
 						<reference key="IBUIParentViewController" ref="551238401"/>
 						<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
@@ -104,18 +102,12 @@
 					<int key="NSvFlags">266</int>
 					<string key="NSFrame">{{0, 431}, {320, 49}}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<string key="NSReuseIdentifierKey">_NS:29</string>
 					<object class="NSColor" key="IBUIBackgroundColor">
 						<int key="NSColorSpace">3</int>
 						<bytes key="NSWhite">MCAwAA</bytes>
 					</object>
 					<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-					<array class="NSMutableArray" key="IBUIItems">
-						<reference ref="3095398"/>
-						<reference ref="849217831"/>
-					</array>
-					<reference key="IBUISelectedItem" ref="849217831"/>
 				</object>
 			</object>
 		</array>

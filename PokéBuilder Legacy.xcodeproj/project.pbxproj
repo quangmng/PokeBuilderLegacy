@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A610CAC32FFBEC4700C0C326 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = A610CAC22FFBEC4700C0C326 /* Pokemon.m */; };
+		A610CAC62FFCD6EA00C0C326 /* PokemonStats.m in Sources */ = {isa = PBXBuildFile; fileRef = A610CAC52FFCD6EA00C0C326 /* PokemonStats.m */; };
+		A610CAC92FFD43A000C0C326 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A610CAC82FFD43A000C0C326 /* .gitignore */; };
 		A62FD4A22FFB82E800130F39 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A62FD4A12FFB82E800130F39 /* HomeView.xib */; };
 		A6636D152FF55D2400C01EC1 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A6636D142FF55D2400C01EC1 /* libsqlite3.dylib */; };
 		A69860C52FE446CC0095E066 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69860C42FE446CC0095E066 /* UIKit.framework */; };
@@ -39,6 +41,10 @@
 /* Begin PBXFileReference section */
 		A610CAC12FFBEC4700C0C326 /* Pokemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pokemon.h; path = Model/Pokemon.h; sourceTree = "<group>"; };
 		A610CAC22FFBEC4700C0C326 /* Pokemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pokemon.m; path = Model/Pokemon.m; sourceTree = "<group>"; };
+		A610CAC42FFCD6EA00C0C326 /* PokemonStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PokemonStats.h; path = Model/PokemonStats.h; sourceTree = "<group>"; };
+		A610CAC52FFCD6EA00C0C326 /* PokemonStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PokemonStats.m; path = Model/PokemonStats.m; sourceTree = "<group>"; };
+		A610CAC72FFCDD6200C0C326 /* IDGeneratable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IDGeneratable.h; path = Model/Protocols/IDGeneratable.h; sourceTree = "<group>"; };
+		A610CAC82FFD43A000C0C326 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		A62FD4A12FFB82E800130F39 /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeView.xib; path = Views/HomeView.xib; sourceTree = "<group>"; };
 		A6636D142FF55D2400C01EC1 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		A69860C12FE446CC0095E066 /* PokéBuilder Legacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PokéBuilder Legacy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +98,7 @@
 		A6636CDF2FF2B01D00C01EC1 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				A610CAC72FFCDD6200C0C326 /* IDGeneratable.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -135,6 +142,7 @@
 				A69860D32FE446CC0095E066 /* PokeAppDelegate.h */,
 				A69860D42FE446CC0095E066 /* PokeAppDelegate.m */,
 				A69860CB2FE446CC0095E066 /* Supporting Files */,
+				A610CAC82FFD43A000C0C326 /* .gitignore */,
 			);
 			path = "PokéBuilder Legacy";
 			sourceTree = "<group>";
@@ -217,6 +225,8 @@
 		A6C957432FEF8F0E00D08D2E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A610CAC42FFCD6EA00C0C326 /* PokemonStats.h */,
+				A610CAC52FFCD6EA00C0C326 /* PokemonStats.m */,
 				A6636CDF2FF2B01D00C01EC1 /* Protocols */,
 				A69DB1282FF28CC0009EDD67 /* Team.h */,
 				A69DB1292FF28CC0009EDD67 /* Team.m */,
@@ -295,6 +305,7 @@
 				A6C9573E2FEECEFD00D08D2E /* tab-pokeball@2x.png in Resources */,
 				A6C957402FEECF4200D08D2E /* PokeStoryboard.storyboard in Resources */,
 				A62FD4A22FFB82E800130F39 /* HomeView.xib in Resources */,
+				A610CAC92FFD43A000C0C326 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +322,7 @@
 				A69DB12A2FF28CC0009EDD67 /* Team.m in Sources */,
 				A69DB12D2FF28DFF009EDD67 /* AppInfoViewController.m in Sources */,
 				A610CAC32FFBEC4700C0C326 /* Pokemon.m in Sources */,
+				A610CAC62FFCD6EA00C0C326 /* PokemonStats.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
