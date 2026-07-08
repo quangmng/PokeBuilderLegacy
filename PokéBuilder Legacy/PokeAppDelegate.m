@@ -7,12 +7,27 @@
 //
 
 #import "PokeAppDelegate.h"
+#import "MainMenuViewController.h"
 
 @implementation PokeAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // 1. Initialize the window using the screen bounds
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // 2. Initialize your view controller
+    MainMenuViewController *mainMenuVC = [[MainMenuViewController alloc] initWithNibName:@"MainMenuViewController" bundle:nil];
+    
+    // 3. You MUST assign the root view controller before making it visible
+    self.window.rootViewController = mainMenuVC;
+    
+    // 4. Set background color (standard practice in iOS 6 to prevent black flashes)
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    // 5. Present the window
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							

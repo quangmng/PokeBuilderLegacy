@@ -11,10 +11,18 @@
 		A600167D2FFD62A000C24F23 /* BattleDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A600167C2FFD62A000C24F23 /* BattleDataFetcher.m */; };
 		A60016802FFD669F00C24F23 /* DatabaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = A600167F2FFD669F00C24F23 /* DatabaseController.m */; };
 		A60016832FFDDCFD00C24F23 /* DamageCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = A60016822FFDDCFD00C24F23 /* DamageCalculator.m */; };
+		A60016872FFDE2AA00C24F23 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60016852FFDE2AA00C24F23 /* MainMenuViewController.m */; };
+		A60016882FFDE2AA00C24F23 /* MainMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A60016862FFDE2AA00C24F23 /* MainMenuViewController.xib */; };
+		A600168E2FFE19C500C24F23 /* MyTeamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A600168C2FFE19C500C24F23 /* MyTeamsViewController.m */; };
+		A600168F2FFE19C500C24F23 /* MyTeamsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A600168D2FFE19C500C24F23 /* MyTeamsViewController.xib */; };
+		A60016932FFE1A0000C24F23 /* AnalysisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A60016912FFE1A0000C24F23 /* AnalysisViewController.m */; };
+		A60016942FFE1A0000C24F23 /* AnalysisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A60016922FFE1A0000C24F23 /* AnalysisViewController.xib */; };
+		A60016972FFE1CD100C24F23 /* TeamReader.m in Sources */ = {isa = PBXBuildFile; fileRef = A60016962FFE1CD100C24F23 /* TeamReader.m */; };
 		A610CAC32FFBEC4700C0C326 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = A610CAC22FFBEC4700C0C326 /* Pokemon.m */; };
 		A610CAC62FFCD6EA00C0C326 /* PokemonStats.m in Sources */ = {isa = PBXBuildFile; fileRef = A610CAC52FFCD6EA00C0C326 /* PokemonStats.m */; };
 		A610CAC92FFD43A000C0C326 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A610CAC82FFD43A000C0C326 /* .gitignore */; };
-		A62FD4A22FFB82E800130F39 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A62FD4A12FFB82E800130F39 /* HomeView.xib */; };
+		A6295F312FFE33B0001B1DC7 /* AppInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6295F302FFE33B0001B1DC7 /* AppInfoViewController.xib */; };
+		A6295F332FFE33BD001B1DC7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6295F322FFE33BD001B1DC7 /* HomeViewController.xib */; };
 		A6636D152FF55D2400C01EC1 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A6636D142FF55D2400C01EC1 /* libsqlite3.dylib */; };
 		A69860C52FE446CC0095E066 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69860C42FE446CC0095E066 /* UIKit.framework */; };
 		A69860C72FE446CC0095E066 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69860C62FE446CC0095E066 /* Foundation.framework */; };
@@ -39,7 +47,6 @@
 		A6C9573C2FEECEFD00D08D2E /* tab-analysis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C957382FEECEFD00D08D2E /* tab-analysis@2x.png */; };
 		A6C9573D2FEECEFD00D08D2E /* tab-pokeball.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C957392FEECEFD00D08D2E /* tab-pokeball.png */; };
 		A6C9573E2FEECEFD00D08D2E /* tab-pokeball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C9573A2FEECEFD00D08D2E /* tab-pokeball@2x.png */; };
-		A6C957402FEECF4200D08D2E /* PokeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6C9573F2FEECF4200D08D2E /* PokeStoryboard.storyboard */; };
 		A6F455182FFD531400B08E0F /* Nature.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F455172FFD531400B08E0F /* Nature.m */; };
 		A6F4551B2FFD575600B08E0F /* NSString+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F4551A2FFD575600B08E0F /* NSString+Formatting.m */; };
 /* End PBXBuildFile section */
@@ -54,13 +61,25 @@
 		A600167F2FFD669F00C24F23 /* DatabaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatabaseController.m; path = Model/DatabaseController.m; sourceTree = "<group>"; };
 		A60016812FFDDCFD00C24F23 /* DamageCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DamageCalculator.h; path = Model/DamageCalculator.h; sourceTree = "<group>"; };
 		A60016822FFDDCFD00C24F23 /* DamageCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DamageCalculator.m; path = Model/DamageCalculator.m; sourceTree = "<group>"; };
+		A60016842FFDE2AA00C24F23 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuViewController.h; path = Views/MainMenuViewController.h; sourceTree = "<group>"; };
+		A60016852FFDE2AA00C24F23 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuViewController.m; path = Views/MainMenuViewController.m; sourceTree = "<group>"; };
+		A60016862FFDE2AA00C24F23 /* MainMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenuViewController.xib; path = Views/MainMenuViewController.xib; sourceTree = "<group>"; };
+		A600168B2FFE19C500C24F23 /* MyTeamsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyTeamsViewController.h; path = Views/MyTeamsViewController.h; sourceTree = "<group>"; };
+		A600168C2FFE19C500C24F23 /* MyTeamsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyTeamsViewController.m; path = Views/MyTeamsViewController.m; sourceTree = "<group>"; };
+		A600168D2FFE19C500C24F23 /* MyTeamsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MyTeamsViewController.xib; path = Views/MyTeamsViewController.xib; sourceTree = "<group>"; };
+		A60016902FFE1A0000C24F23 /* AnalysisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnalysisViewController.h; path = Views/AnalysisViewController.h; sourceTree = "<group>"; };
+		A60016912FFE1A0000C24F23 /* AnalysisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnalysisViewController.m; path = Views/AnalysisViewController.m; sourceTree = "<group>"; };
+		A60016922FFE1A0000C24F23 /* AnalysisViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AnalysisViewController.xib; path = Views/AnalysisViewController.xib; sourceTree = "<group>"; };
+		A60016952FFE1CD000C24F23 /* TeamReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TeamReader.h; path = Model/TeamReader.h; sourceTree = "<group>"; };
+		A60016962FFE1CD100C24F23 /* TeamReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TeamReader.m; path = Model/TeamReader.m; sourceTree = "<group>"; };
 		A610CAC12FFBEC4700C0C326 /* Pokemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pokemon.h; path = Model/Pokemon.h; sourceTree = "<group>"; };
 		A610CAC22FFBEC4700C0C326 /* Pokemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Pokemon.m; path = Model/Pokemon.m; sourceTree = "<group>"; };
 		A610CAC42FFCD6EA00C0C326 /* PokemonStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PokemonStats.h; path = Model/PokemonStats.h; sourceTree = "<group>"; };
 		A610CAC52FFCD6EA00C0C326 /* PokemonStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PokemonStats.m; path = Model/PokemonStats.m; sourceTree = "<group>"; };
 		A610CAC72FFCDD6200C0C326 /* IDGeneratable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IDGeneratable.h; path = Model/Protocols/IDGeneratable.h; sourceTree = "<group>"; };
 		A610CAC82FFD43A000C0C326 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
-		A62FD4A12FFB82E800130F39 /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeView.xib; path = Views/HomeView.xib; sourceTree = "<group>"; };
+		A6295F302FFE33B0001B1DC7 /* AppInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppInfoViewController.xib; path = Views/AppInfoViewController.xib; sourceTree = "<group>"; };
+		A6295F322FFE33BD001B1DC7 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Views/HomeViewController.xib; sourceTree = "<group>"; };
 		A6636D142FF55D2400C01EC1 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		A69860C12FE446CC0095E066 /* PokéBuilder Legacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PokéBuilder Legacy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A69860C42FE446CC0095E066 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -92,7 +111,6 @@
 		A6C957382FEECEFD00D08D2E /* tab-analysis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-analysis@2x.png"; sourceTree = "<group>"; };
 		A6C957392FEECEFD00D08D2E /* tab-pokeball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-pokeball.png"; sourceTree = "<group>"; };
 		A6C9573A2FEECEFD00D08D2E /* tab-pokeball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-pokeball@2x.png"; sourceTree = "<group>"; };
-		A6C9573F2FEECF4200D08D2E /* PokeStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PokeStoryboard.storyboard; sourceTree = "<group>"; };
 		A6F455162FFD531400B08E0F /* Nature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Nature.h; path = Model/Nature.h; sourceTree = "<group>"; };
 		A6F455172FFD531400B08E0F /* Nature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Nature.m; path = Model/Nature.m; sourceTree = "<group>"; };
 		A6F455192FFD575600B08E0F /* NSString+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Formatting.h"; path = "Model/NSString+Formatting.h"; sourceTree = "<group>"; };
@@ -206,7 +224,11 @@
 		A698B18F2FF01A7600CABAB9 /* XIB */ = {
 			isa = PBXGroup;
 			children = (
-				A62FD4A12FFB82E800130F39 /* HomeView.xib */,
+				A60016862FFDE2AA00C24F23 /* MainMenuViewController.xib */,
+				A6295F302FFE33B0001B1DC7 /* AppInfoViewController.xib */,
+				A6295F322FFE33BD001B1DC7 /* HomeViewController.xib */,
+				A600168D2FFE19C500C24F23 /* MyTeamsViewController.xib */,
+				A60016922FFE1A0000C24F23 /* AnalysisViewController.xib */,
 			);
 			name = XIB;
 			sourceTree = "<group>";
@@ -226,7 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				A698B18F2FF01A7600CABAB9 /* XIB */,
-				A6C9573F2FEECF4200D08D2E /* PokeStoryboard.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -234,10 +255,16 @@
 		A6C957422FEF8F0500D08D2E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A600168B2FFE19C500C24F23 /* MyTeamsViewController.h */,
+				A600168C2FFE19C500C24F23 /* MyTeamsViewController.m */,
 				A69860DF2FE446CD0095E066 /* PokeViewController.h */,
 				A69860E02FE446CD0095E066 /* PokeViewController.m */,
 				A69DB12B2FF28DFF009EDD67 /* AppInfoViewController.h */,
 				A69DB12C2FF28DFF009EDD67 /* AppInfoViewController.m */,
+				A60016842FFDE2AA00C24F23 /* MainMenuViewController.h */,
+				A60016852FFDE2AA00C24F23 /* MainMenuViewController.m */,
+				A60016902FFE1A0000C24F23 /* AnalysisViewController.h */,
+				A60016912FFE1A0000C24F23 /* AnalysisViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -264,6 +291,8 @@
 				A600167F2FFD669F00C24F23 /* DatabaseController.m */,
 				A60016812FFDDCFD00C24F23 /* DamageCalculator.h */,
 				A60016822FFDDCFD00C24F23 /* DamageCalculator.m */,
+				A60016952FFE1CD000C24F23 /* TeamReader.h */,
+				A60016962FFE1CD100C24F23 /* TeamReader.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -335,9 +364,12 @@
 				A6C9573C2FEECEFD00D08D2E /* tab-analysis@2x.png in Resources */,
 				A6C9573D2FEECEFD00D08D2E /* tab-pokeball.png in Resources */,
 				A6C9573E2FEECEFD00D08D2E /* tab-pokeball@2x.png in Resources */,
-				A6C957402FEECF4200D08D2E /* PokeStoryboard.storyboard in Resources */,
-				A62FD4A22FFB82E800130F39 /* HomeView.xib in Resources */,
 				A610CAC92FFD43A000C0C326 /* .gitignore in Resources */,
+				A60016882FFDE2AA00C24F23 /* MainMenuViewController.xib in Resources */,
+				A600168F2FFE19C500C24F23 /* MyTeamsViewController.xib in Resources */,
+				A60016942FFE1A0000C24F23 /* AnalysisViewController.xib in Resources */,
+				A6295F312FFE33B0001B1DC7 /* AppInfoViewController.xib in Resources */,
+				A6295F332FFE33BD001B1DC7 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +393,10 @@
 				A600167D2FFD62A000C24F23 /* BattleDataFetcher.m in Sources */,
 				A60016802FFD669F00C24F23 /* DatabaseController.m in Sources */,
 				A60016832FFDDCFD00C24F23 /* DamageCalculator.m in Sources */,
+				A60016872FFDE2AA00C24F23 /* MainMenuViewController.m in Sources */,
+				A600168E2FFE19C500C24F23 /* MyTeamsViewController.m in Sources */,
+				A60016932FFE1A0000C24F23 /* AnalysisViewController.m in Sources */,
+				A60016972FFE1CD100C24F23 /* TeamReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
