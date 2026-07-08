@@ -21,19 +21,19 @@
 
 
 // Customisable attributes (read-write)
-@property (nonatomic, copy) NSString *item;
 @property (nonatomic, assign) NSInteger level;
 @property (nonatomic, copy) NSString *ability;
 @property (nonatomic, copy) PokemonStats *effortValues;
+@property (nonatomic, copy) NSArray *moves;
 @property (nonatomic, copy) NSString *nature;
 
 - (instancetype)initWithID:(NSInteger)pokemonID
              pokemonNumber:(NSInteger)pokemonNumber
-                      item:(NSString *)item
                      level:(NSInteger)level
                    ability:(NSString *)ability
               effortValues:(PokemonStats *)effortValues
-                    nature:(NSString *)nature;
+                    nature:(NSString *)nature
+                     moves:(NSArray *)moves;
 
 // Domain-specific restrictions
 + (NSInteger)maxLevel;
@@ -45,5 +45,8 @@
 + (NSInteger)clipEV:(NSInteger)value;
 + (NSInteger)validLevel:(NSInteger)level;
 + (PokemonStats *)validEVs:(PokemonStats *)stats;
++ (NSInteger)maxMoves;
++ (NSArray *)validMoves:(NSArray *)moves;
+- (NSString *)getMoveAtIndex:(NSInteger)index;
 
 @end

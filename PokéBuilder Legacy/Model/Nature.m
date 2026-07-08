@@ -43,7 +43,7 @@
         return 1.0;
     }
     
-    // The core math logic from your Swift file
+    // Core math logic 
     NSInteger enhance = natureIndex / 5;
     NSInteger reduce = natureIndex % 5;
     

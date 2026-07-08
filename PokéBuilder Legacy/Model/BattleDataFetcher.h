@@ -25,6 +25,21 @@
 
 @end
 
+@interface MoveData : NSObject
+@property (nonatomic, copy, readonly) NSString *damageClass;
+@property (nonatomic, strong, readonly) NSNumber *power;
+@property (nonatomic, copy, readonly) NSString *typeName;
+@property (nonatomic, strong, readonly) NSURL *typeURL;
+- (instancetype)initWithDamageClass:(NSString *)damageClass power:(NSNumber *)power typeName:(NSString *)typeName typeURL:(NSURL *)typeURL;
+@end
+
+@interface TypeData : NSObject
+@property (nonatomic, copy, readonly) NSArray *doubleDamageTo;
+@property (nonatomic, copy, readonly) NSArray *halfDamageTo;
+@property (nonatomic, copy, readonly) NSArray *noDamageTo;
+- (instancetype)initWithDoubleDamage:(NSArray *)doubleDamage halfDamage:(NSArray *)halfDamage noDamage:(NSArray *)noDamage;
+@end
+
 
 #pragma mark - BattleDataFetcher
 
@@ -32,4 +47,10 @@
 
 // No extra methods needed in the header; the protocol handles the contract!
 
+@end
+
+@interface MoveDataFetcher : NSObject <APIFetchable>
+@end
+
+@interface TypeDataFetcher : NSObject <APIFetchable>
 @end

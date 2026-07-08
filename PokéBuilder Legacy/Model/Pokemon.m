@@ -23,21 +23,22 @@ static NSInteger clipValue(NSInteger value, NSInteger lowerBound, NSInteger uppe
 
 - (instancetype)initWithID:(NSInteger)pokemonID
              pokemonNumber:(NSInteger)pokemonNumber
-                      item:(NSString *)item
                      level:(NSInteger)level
                    ability:(NSString *)ability
               effortValues:(PokemonStats *)effortValues
-                    nature:(NSString *)nature {
+                    nature:(NSString *)nature
+                    moves:(NSArray *)moves  {
     self = [super init];
     if (self) {
         _pokemonID = pokemonID;
         _pokemonNumber = pokemonNumber;
-        _item = [item copy];
         _level = [Pokemon validLevel:level];
         _ability = [ability copy];
-        // Validating EVs upon initialization
+        
+        // Validating EVs upon initialisation
         _effortValues = [Pokemon validEVs:effortValues];
         _nature = [nature copy];
+        _moves = [Pokemon validMoves:moves];
     }
     return self;
 }
@@ -60,14 +61,32 @@ static NSInteger clipValue(NSInteger value, NSInteger lowerBound, NSInteger uppe
 + (PokemonStats *)validEVs:(PokemonStats *)stats {
     if (!stats) return nil;
     
-    // Speculative initialiser based on the Swift code.
-    // Ensure PokemonStats matches this signature later.
+    // Speculative initialiser, ensure PokemonStats matches this signature later.
     return [[PokemonStats alloc] initWithHP:[self clipEV:stats.hp]
                                      attack:[self clipEV:stats.attack]
                                     defense:[self clipEV:stats.defense]
                               specialAttack:[self clipEV:stats.specialAttack]
                              specialDefense:[self clipEV:stats.specialDefense]
                                       speed:[self clipEV:stats.speed]];
+}
+
++ (NSInteger)maxMoves { return 4; }
+
++ (NSArray *)validMoves:(NSArray *)moves {
+    if (!moves) return @[];
+    // Prefix array to a max of 4 elements to mimic Swift's prefix(maxMoves)
+    if (moves.count > [self maxMoves]) {
+        return [moves subarrayWithRange:NSMakeRange(0, [self maxMoves])];
+    }
+    return moves;
+}
+
+// Convenience method to prevent array out-of-bounds crashes when binding SQLite.
+- (NSString *)getMoveAtIndex:(NSInteger)index {
+    if (index >= 0 && index < self.moves.count) {
+        return self.moves[index];
+    }
+    return @"";
 }
 
 #pragma mark - IDGeneratable Protocol
@@ -96,16 +115,16 @@ static NSInteger clipValue(NSInteger value, NSInteger lowerBound, NSInteger uppe
     return self.pokemonID == other.pokemonID &&
     self.pokemonNumber == other.pokemonNumber &&
     self.level == other.level &&
-    [self.item isEqualToString:other.item] &&
     [self.ability isEqualToString:other.ability] &&
     [self.nature isEqualToString:other.nature] &&
-    [self.effortValues isEqual:other.effortValues];
+    [self.effortValues isEqual:other.effortValues] &&
+    [self.moves isEqualToArray:other.moves];
 }
 
 - (NSUInteger)hash {
     // Bitwise XORing the hashes and primitives together.
     return self.pokemonID ^ self.pokemonNumber ^ self.level ^
-    self.item.hash ^ self.ability.hash ^ self.nature.hash ^ self.effortValues.hash;
+    self.ability.hash ^ self.nature.hash ^ self.effortValues.hash ^ self.moves.hash;
 }
 
 #pragma mark - NSCopying
@@ -113,11 +132,11 @@ static NSInteger clipValue(NSInteger value, NSInteger lowerBound, NSInteger uppe
 - (id)copyWithZone:(NSZone *)zone {
     Pokemon *copy = [[[self class] allocWithZone:zone] initWithID:self.pokemonID
                                                     pokemonNumber:self.pokemonNumber
-                                                             item:self.item
                                                             level:self.level
                                                           ability:self.ability
                                                      effortValues:self.effortValues
-                                                           nature:self.nature];
+                                                           nature:self.nature
+                                                            moves:self.moves];
     return copy;
 }
 
