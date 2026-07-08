@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DatabaseController.h"
+#import "Team.h"
 
-@interface MyTeamsViewController : UIViewController
+@interface MyTeamsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+
+// Create hooks for UI elements
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UIImageView *emptyStateImageView;
+
+@property (nonatomic, strong) NSMutableArray *myTeams;
+
+@property (nonatomic, strong) DatabaseController *dbController;
+
+@property (nonatomic, assign) NSInteger teamIndexBeingRenamed;
+
 
 @end

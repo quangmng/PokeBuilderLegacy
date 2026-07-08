@@ -11,5 +11,7 @@
 @interface MainMenuViewController : UIViewController
 
 - (IBAction)appInfo:(id)sender;
+- (IBAction)helpPopup:(id)sender;
+- (IBAction)toHomeView:(id)sender;
 
 @end

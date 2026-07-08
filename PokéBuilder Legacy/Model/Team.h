@@ -14,7 +14,7 @@
 
 // Swift's `id` property becomes `teamID` because `id` is a reserved keyword in Objective-C.
 @property (nonatomic, assign, readonly) NSInteger teamID;
-@property (nonatomic, copy, readonly) NSString *name;
+@property (nonatomic, copy, readwrite) NSString *name;
 
 // Exposing an immutable array to the public to prevent external modification.
 @property (nonatomic, copy, readonly) NSArray *pokemonIDs;

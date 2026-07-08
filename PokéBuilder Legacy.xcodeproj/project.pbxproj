@@ -22,7 +22,6 @@
 		A610CAC62FFCD6EA00C0C326 /* PokemonStats.m in Sources */ = {isa = PBXBuildFile; fileRef = A610CAC52FFCD6EA00C0C326 /* PokemonStats.m */; };
 		A610CAC92FFD43A000C0C326 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A610CAC82FFD43A000C0C326 /* .gitignore */; };
 		A6295F312FFE33B0001B1DC7 /* AppInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6295F302FFE33B0001B1DC7 /* AppInfoViewController.xib */; };
-		A6295F332FFE33BD001B1DC7 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6295F322FFE33BD001B1DC7 /* HomeViewController.xib */; };
 		A6636D152FF55D2400C01EC1 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A6636D142FF55D2400C01EC1 /* libsqlite3.dylib */; };
 		A69860C52FE446CC0095E066 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69860C42FE446CC0095E066 /* UIKit.framework */; };
 		A69860C72FE446CC0095E066 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69860C62FE446CC0095E066 /* Foundation.framework */; };
@@ -33,7 +32,6 @@
 		A69860D72FE446CC0095E066 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860D62FE446CC0095E066 /* Default.png */; };
 		A69860D92FE446CC0095E066 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860D82FE446CC0095E066 /* Default@2x.png */; };
 		A69860DB2FE446CC0095E066 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860DA2FE446CC0095E066 /* Default-568h@2x.png */; };
-		A69860E12FE446CD0095E066 /* PokeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A69860E02FE446CD0095E066 /* PokeViewController.m */; };
 		A69860E82FE4479D0095E066 /* asu_pid.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = A69860E72FE4479D0095E066 /* asu_pid.entitlements */; };
 		A69860EE2FE448240095E066 /* blackPoke-solid-color-image.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860EA2FE448240095E066 /* blackPoke-solid-color-image.png */; };
 		A69860F02FE448240095E066 /* redPoke-solid-color-image.png in Resources */ = {isa = PBXBuildFile; fileRef = A69860EC2FE448240095E066 /* redPoke-solid-color-image.png */; };
@@ -47,6 +45,7 @@
 		A6C9573C2FEECEFD00D08D2E /* tab-analysis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C957382FEECEFD00D08D2E /* tab-analysis@2x.png */; };
 		A6C9573D2FEECEFD00D08D2E /* tab-pokeball.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C957392FEECEFD00D08D2E /* tab-pokeball.png */; };
 		A6C9573E2FEECEFD00D08D2E /* tab-pokeball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C9573A2FEECEFD00D08D2E /* tab-pokeball@2x.png */; };
+		A6E221722FFE89C300A27FB2 /* bgImg-addPokemon.png in Resources */ = {isa = PBXBuildFile; fileRef = A6E221712FFE89C300A27FB2 /* bgImg-addPokemon.png */; };
 		A6F455182FFD531400B08E0F /* Nature.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F455172FFD531400B08E0F /* Nature.m */; };
 		A6F4551B2FFD575600B08E0F /* NSString+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F4551A2FFD575600B08E0F /* NSString+Formatting.m */; };
 /* End PBXBuildFile section */
@@ -79,7 +78,6 @@
 		A610CAC72FFCDD6200C0C326 /* IDGeneratable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IDGeneratable.h; path = Model/Protocols/IDGeneratable.h; sourceTree = "<group>"; };
 		A610CAC82FFD43A000C0C326 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		A6295F302FFE33B0001B1DC7 /* AppInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AppInfoViewController.xib; path = Views/AppInfoViewController.xib; sourceTree = "<group>"; };
-		A6295F322FFE33BD001B1DC7 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Views/HomeViewController.xib; sourceTree = "<group>"; };
 		A6636D142FF55D2400C01EC1 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		A69860C12FE446CC0095E066 /* PokéBuilder Legacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PokéBuilder Legacy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A69860C42FE446CC0095E066 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -94,8 +92,6 @@
 		A69860D62FE446CC0095E066 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		A69860D82FE446CC0095E066 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		A69860DA2FE446CC0095E066 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		A69860DF2FE446CD0095E066 /* PokeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PokeViewController.h; sourceTree = "<group>"; };
-		A69860E02FE446CD0095E066 /* PokeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokeViewController.m; sourceTree = "<group>"; };
 		A69860E72FE4479D0095E066 /* asu_pid.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = asu_pid.entitlements; sourceTree = "<group>"; };
 		A69860EA2FE448240095E066 /* blackPoke-solid-color-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackPoke-solid-color-image.png"; sourceTree = "<group>"; };
 		A69860EC2FE448240095E066 /* redPoke-solid-color-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redPoke-solid-color-image.png"; sourceTree = "<group>"; };
@@ -111,6 +107,7 @@
 		A6C957382FEECEFD00D08D2E /* tab-analysis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-analysis@2x.png"; sourceTree = "<group>"; };
 		A6C957392FEECEFD00D08D2E /* tab-pokeball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-pokeball.png"; sourceTree = "<group>"; };
 		A6C9573A2FEECEFD00D08D2E /* tab-pokeball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-pokeball@2x.png"; sourceTree = "<group>"; };
+		A6E221712FFE89C300A27FB2 /* bgImg-addPokemon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgImg-addPokemon.png"; sourceTree = "<group>"; };
 		A6F455162FFD531400B08E0F /* Nature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Nature.h; path = Model/Nature.h; sourceTree = "<group>"; };
 		A6F455172FFD531400B08E0F /* Nature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Nature.m; path = Model/Nature.m; sourceTree = "<group>"; };
 		A6F455192FFD575600B08E0F /* NSString+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Formatting.h"; path = "Model/NSString+Formatting.h"; sourceTree = "<group>"; };
@@ -202,6 +199,7 @@
 		A69860E92FE448240095E066 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				A6E221712FFE89C300A27FB2 /* bgImg-addPokemon.png */,
 				A6C957362FEECEFD00D08D2E /* Tab */,
 				A69860F22FE7F5C00095E066 /* Icon */,
 				A69860EA2FE448240095E066 /* blackPoke-solid-color-image.png */,
@@ -226,7 +224,6 @@
 			children = (
 				A60016862FFDE2AA00C24F23 /* MainMenuViewController.xib */,
 				A6295F302FFE33B0001B1DC7 /* AppInfoViewController.xib */,
-				A6295F322FFE33BD001B1DC7 /* HomeViewController.xib */,
 				A600168D2FFE19C500C24F23 /* MyTeamsViewController.xib */,
 				A60016922FFE1A0000C24F23 /* AnalysisViewController.xib */,
 			);
@@ -257,8 +254,6 @@
 			children = (
 				A600168B2FFE19C500C24F23 /* MyTeamsViewController.h */,
 				A600168C2FFE19C500C24F23 /* MyTeamsViewController.m */,
-				A69860DF2FE446CD0095E066 /* PokeViewController.h */,
-				A69860E02FE446CD0095E066 /* PokeViewController.m */,
 				A69DB12B2FF28DFF009EDD67 /* AppInfoViewController.h */,
 				A69DB12C2FF28DFF009EDD67 /* AppInfoViewController.m */,
 				A60016842FFDE2AA00C24F23 /* MainMenuViewController.h */,
@@ -369,7 +364,7 @@
 				A600168F2FFE19C500C24F23 /* MyTeamsViewController.xib in Resources */,
 				A60016942FFE1A0000C24F23 /* AnalysisViewController.xib in Resources */,
 				A6295F312FFE33B0001B1DC7 /* AppInfoViewController.xib in Resources */,
-				A6295F332FFE33BD001B1DC7 /* HomeViewController.xib in Resources */,
+				A6E221722FFE89C300A27FB2 /* bgImg-addPokemon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +377,6 @@
 			files = (
 				A69860D12FE446CC0095E066 /* main.m in Sources */,
 				A69860D52FE446CC0095E066 /* PokeAppDelegate.m in Sources */,
-				A69860E12FE446CD0095E066 /* PokeViewController.m in Sources */,
 				A69DB12A2FF28CC0009EDD67 /* Team.m in Sources */,
 				A69DB12D2FF28DFF009EDD67 /* AppInfoViewController.m in Sources */,
 				A610CAC32FFBEC4700C0C326 /* Pokemon.m in Sources */,
