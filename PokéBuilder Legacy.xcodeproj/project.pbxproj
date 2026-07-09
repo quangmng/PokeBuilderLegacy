@@ -46,6 +46,8 @@
 		A6C9573D2FEECEFD00D08D2E /* tab-pokeball.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C957392FEECEFD00D08D2E /* tab-pokeball.png */; };
 		A6C9573E2FEECEFD00D08D2E /* tab-pokeball@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6C9573A2FEECEFD00D08D2E /* tab-pokeball@2x.png */; };
 		A6E221722FFE89C300A27FB2 /* bgImg-addPokemon.png in Resources */ = {isa = PBXBuildFile; fileRef = A6E221712FFE89C300A27FB2 /* bgImg-addPokemon.png */; };
+		A6E221762FFF05F100A27FB2 /* TeamDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E221742FFF05F000A27FB2 /* TeamDetailsViewController.m */; };
+		A6E221772FFF05F100A27FB2 /* TeamDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E221752FFF05F100A27FB2 /* TeamDetailsViewController.xib */; };
 		A6F455182FFD531400B08E0F /* Nature.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F455172FFD531400B08E0F /* Nature.m */; };
 		A6F4551B2FFD575600B08E0F /* NSString+Formatting.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F4551A2FFD575600B08E0F /* NSString+Formatting.m */; };
 /* End PBXBuildFile section */
@@ -108,6 +110,9 @@
 		A6C957392FEECEFD00D08D2E /* tab-pokeball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-pokeball.png"; sourceTree = "<group>"; };
 		A6C9573A2FEECEFD00D08D2E /* tab-pokeball@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab-pokeball@2x.png"; sourceTree = "<group>"; };
 		A6E221712FFE89C300A27FB2 /* bgImg-addPokemon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgImg-addPokemon.png"; sourceTree = "<group>"; };
+		A6E221732FFF05F000A27FB2 /* TeamDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TeamDetailsViewController.h; path = Views/TeamDetailsViewController.h; sourceTree = "<group>"; };
+		A6E221742FFF05F000A27FB2 /* TeamDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TeamDetailsViewController.m; path = Views/TeamDetailsViewController.m; sourceTree = "<group>"; };
+		A6E221752FFF05F100A27FB2 /* TeamDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TeamDetailsViewController.xib; path = Views/TeamDetailsViewController.xib; sourceTree = "<group>"; };
 		A6F455162FFD531400B08E0F /* Nature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Nature.h; path = Model/Nature.h; sourceTree = "<group>"; };
 		A6F455172FFD531400B08E0F /* Nature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Nature.m; path = Model/Nature.m; sourceTree = "<group>"; };
 		A6F455192FFD575600B08E0F /* NSString+Formatting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Formatting.h"; path = "Model/NSString+Formatting.h"; sourceTree = "<group>"; };
@@ -226,6 +231,7 @@
 				A6295F302FFE33B0001B1DC7 /* AppInfoViewController.xib */,
 				A600168D2FFE19C500C24F23 /* MyTeamsViewController.xib */,
 				A60016922FFE1A0000C24F23 /* AnalysisViewController.xib */,
+				A6E221752FFF05F100A27FB2 /* TeamDetailsViewController.xib */,
 			);
 			name = XIB;
 			sourceTree = "<group>";
@@ -254,6 +260,8 @@
 			children = (
 				A600168B2FFE19C500C24F23 /* MyTeamsViewController.h */,
 				A600168C2FFE19C500C24F23 /* MyTeamsViewController.m */,
+				A6E221732FFF05F000A27FB2 /* TeamDetailsViewController.h */,
+				A6E221742FFF05F000A27FB2 /* TeamDetailsViewController.m */,
 				A69DB12B2FF28DFF009EDD67 /* AppInfoViewController.h */,
 				A69DB12C2FF28DFF009EDD67 /* AppInfoViewController.m */,
 				A60016842FFDE2AA00C24F23 /* MainMenuViewController.h */,
@@ -365,6 +373,7 @@
 				A60016942FFE1A0000C24F23 /* AnalysisViewController.xib in Resources */,
 				A6295F312FFE33B0001B1DC7 /* AppInfoViewController.xib in Resources */,
 				A6E221722FFE89C300A27FB2 /* bgImg-addPokemon.png in Resources */,
+				A6E221772FFF05F100A27FB2 /* TeamDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +400,7 @@
 				A600168E2FFE19C500C24F23 /* MyTeamsViewController.m in Sources */,
 				A60016932FFE1A0000C24F23 /* AnalysisViewController.m in Sources */,
 				A60016972FFE1CD100C24F23 /* TeamReader.m in Sources */,
+				A6E221762FFF05F100A27FB2 /* TeamDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
