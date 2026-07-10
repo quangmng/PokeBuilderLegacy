@@ -8,14 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "Team.h"
+#import <QuartzCore/QuartzCore.h>
 // #import "DatabaseController.h" // We will need this to save later!
 
 // Add UITextFieldDelegate so keyboard can hide when user hits "Return"
-@interface PokemonDetailsViewController : UIViewController <UITextFieldDelegate>
+@interface PokemonDetailsViewController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (nonatomic, assign) NSInteger pokemonID;
 @property (nonatomic, strong) NSString *pokemonName;
 @property (nonatomic, strong) Team *targetTeam;
+@property (nonatomic, strong) NSArray *availableAbilities;
+@property (nonatomic, strong) NSArray *availableMoves;
 
 // Main container
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
@@ -52,5 +55,12 @@
 @property (nonatomic, weak) IBOutlet UISlider *evSpASlider;
 @property (nonatomic, weak) IBOutlet UISlider *evSpDSlider;
 @property (nonatomic, weak) IBOutlet UISlider *evSpeSlider;
+
+// --- ABILITY PICKER COMPONENT ---
+@property (nonatomic, strong) IBOutlet UIView *pickerContainerView;
+@property (nonatomic, weak) IBOutlet UIPickerView *abilityPickerView;
+
+// Tracks the currently selected ability string mid-scroll
+@property (nonatomic, strong) NSString *temporarySelectedAbility;
 
 @end
