@@ -193,8 +193,6 @@
     }
     
     // Create the Action Sheet
-    // Note: The destructive button (red) is automatically assigned index 0.
-    // "Team Details" is index 1, "Rename" is index 2.
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Team Options"
                                                              delegate:self
                                                     cancelButtonTitle:@"Cancel"

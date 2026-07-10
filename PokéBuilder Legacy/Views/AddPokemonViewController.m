@@ -7,6 +7,7 @@
 //
 
 #import "AddPokemonViewController.h"
+#import "PokemonDetailsViewController.h"
 
 @interface AddPokemonViewController ()
 
@@ -191,6 +192,31 @@
                                    [cell setNeedsLayout];
                                }
                            }];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    // Figure out which dictionary we tapped
+    NSDictionary *pokemonDict = nil;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        pokemonDict = self.filteredApiPokemonList[indexPath.row];
+    } else {
+        pokemonDict = self.apiPokemonList[indexPath.row];
+    }
+    
+    // Extract the ID
+    NSInteger pkmnID = [self extractPokemonIDFromURL:pokemonDict[@"url"]];
+    
+    // Push to the new Details screen
+    PokemonDetailsViewController *detailsVC = [[PokemonDetailsViewController alloc] initWithNibName:@"PokemonDetailsViewController" bundle:nil];
+    
+    // Pass the data forward
+    detailsVC.pokemonID = pkmnID;
+    detailsVC.pokemonName = [pokemonDict[@"name"] capitalizedString];
+    detailsVC.targetTeam = self.targetTeam;
+    
+    [self.navigationController pushViewController:detailsVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
