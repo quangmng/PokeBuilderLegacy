@@ -19,7 +19,7 @@
 // Exposing an immutable array to the public to prevent external modification.
 @property (nonatomic, copy, readonly) NSArray *pokemonIDs;
 
-// Designated initializer matching your Swift properties
+// Designated initialiser matching your Swift properties
 - (instancetype)initWithID:(NSInteger)teamID
                       name:(NSString *)name
                 pokemonIDs:(NSArray *)pokemonIDs;

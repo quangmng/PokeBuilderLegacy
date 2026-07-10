@@ -1,18 +1,18 @@
 //
-//  AnalysisViewController.m
+//  PokemonDetailsViewController.m
 //  PokéBuilder Legacy
 //
-//  Created by Quang Minh Nguyen on 8/07/2026.
+//  Created by Quang Minh Nguyen on 10/07/2026.
 //  Copyright (c) 2026 Quang Minh Nguyen. All rights reserved.
 //
 
-#import "AnalysisViewController.h"
+#import "PokemonDetailsViewController.h"
 
-@interface AnalysisViewController ()
+@interface PokemonDetailsViewController ()
 
 @end
 
-@implementation AnalysisViewController
+@implementation PokemonDetailsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

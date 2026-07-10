@@ -10,7 +10,7 @@
 #import "DatabaseController.h"
 #import "Team.h"
 
-@interface MyTeamsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+@interface MyTeamsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UIActionSheetDelegate, UISearchDisplayDelegate, UISearchBarDelegate>
 
 // Create hooks for UI elements
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
@@ -20,7 +20,9 @@
 
 @property (nonatomic, strong) DatabaseController *dbController;
 
-@property (nonatomic, assign) NSInteger teamIndexBeingRenamed;
+@property (nonatomic, assign) Team *selectedTeam;
+
+@property (nonatomic, strong) NSMutableArray *filteredTeams;
 
 
 @end
