@@ -20,10 +20,42 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.pokemonName;
-    // Force the backgrounds to be pure white so the overscroll bounce is clean
+    self.scrollView.clipsToBounds = YES;
+    // Force the background to be white so the overscroll bounce is clean
     self.view.backgroundColor = [UIColor whiteColor];
-    self.scrollView.backgroundColor = [UIColor whiteColor];
-    self.scrollView.contentSize = CGSizeMake(320, 800);
+    self.scrollView.contentSize = CGSizeMake(320, 765);
+    UIView *glassView = self.navigationController.view;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect frame = self.pickerContainerView.frame;
+        frame.origin.y = glassView.frame.size.height; // Slide back down off the glass
+        self.pickerContainerView.frame = frame;
+    }];
+    // Keyboard Toolbar Setup
+    // Create a standard toolbar that matches the width of the screen
+    UIToolbar *keyboardToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    keyboardToolbar.barStyle = UIBarStyleBlackTranslucent; // Matches the iOS 6 aesthetic
+    
+    // Create a flexible space and a Done button
+    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *doneBtn = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(dismissKeyboard)];
+    
+    // Add them to the toolbar
+    keyboardToolbar.items = @[flexSpace, doneBtn];
+    
+    // Tap outside keypad to dismiss
+    UITapGestureRecognizer *tapToDismiss = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.scrollView addGestureRecognizer:tapToDismiss];
+    
+    // Attach the toolbar to every single text field that uses a number pad
+    self.levelTextField.inputAccessoryView = keyboardToolbar;
+    self.evHpTextField.inputAccessoryView = keyboardToolbar;
+    self.evAtkTextField.inputAccessoryView = keyboardToolbar;
+    self.evDefTextField.inputAccessoryView = keyboardToolbar;
+    self.evSpATextField.inputAccessoryView = keyboardToolbar;
+    self.evSpDTextField.inputAccessoryView = keyboardToolbar;
+    self.evSpeTextField.inputAccessoryView = keyboardToolbar;
+    
     [self fetchDeepPokemonStats];
     // Add the "Save" button to the top right
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save"
@@ -35,7 +67,6 @@
     // Populate text placeholders
     self.type1Label.text = @"Element";
     self.type2Label.text = @"Type";
-    self.levelTextField.text = @"50";
     
     [self.abilityButton setTitle:@"Ability..." forState:UIControlStateNormal];
     [self.natureButton setTitle:@"Nature..." forState:UIControlStateNormal];
@@ -44,61 +75,112 @@
     [self.move3Button setTitle:@"Move 3..." forState:UIControlStateNormal];
     [self.move4Button setTitle:@"Move 4..." forState:UIControlStateNormal];
     
-    // Set up EV text fields and sliders
-    self.evHpTextField.text = @"0";
-    self.evHpSlider.value = 0.0;
-    self.evAtkTextField.text = @"252";
-    self.evAtkSlider.value = 252.0;
-    self.evAtkSlider.maximumValue = 252.0;
-    self.evDefTextField.text = @"0";
-    self.evDefSlider.value = 0.0;
-    self.evSpATextField.text = @"0";
-    self.evSpASlider.value = 0.0;
-    self.evSpDTextField.text = @"4";
-    self.evSpDSlider.value = 4.0;
-    self.evSpeTextField.text = @"252";
-    self.evSpeSlider.value = 252.0;
-    self.evSpeSlider.maximumValue = 252.0;
+    // Group all the sliders together
+    NSArray *evSliders = @[self.evHpSlider, self.evAtkSlider, self.evDefSlider,
+                           self.evSpASlider, self.evSpDSlider, self.evSpeSlider];
     
-    // Fetch the deep stats
-    // [self fetchDeepPokemonStatsFromAPI];
+    // Loop through and configure every slider identically in one sweep
+    for (UISlider *slider in evSliders) {
+        slider.minimumValue = 0.0f;
+        slider.maximumValue = 252.0f;
+        slider.value = 0.0f;
+    }
     
-    // BIND THE SPRITE IMAGE ASYNCHRONOUSLY
+    // Group all the text fields together
+    NSArray *evTextFields = @[self.evHpTextField, self.evAtkTextField, self.evDefTextField,
+                              self.evSpATextField, self.evSpDTextField, self.evSpeTextField];
+    
+    // Loop through and set the default starting text
+    for (UITextField *textField in evTextFields) {
+        textField.text = @"0";
+    }
+    
+    // --- 2. SET UP THE LEVEL LIMITS ---
+    // Level has no slider, so we just set its default text here
+    self.levelTextField.text = @"50";
+    
+    self.staticNatures = @[
+                           @"Adamant", @"Bashful", @"Bold", @"Brave", @"Calm",
+                           @"Careful", @"Docile", @"Gentle", @"Hardy", @"Hasty",
+                           @"Impish", @"Jolly", @"Lax", @"Lonely", @"Mild",
+                           @"Modest", @"Naive", @"Naughty", @"Quiet", @"Quirky",
+                           @"Rash", @"Relaxed", @"Sassy", @"Serious", @"Timid"
+                           ];
+    
+    // Force the picker container completely off-screen downwards on launch
+    CGRect pickerFrame = self.pickerContainerView.frame;
+    pickerFrame.origin.y = 1000; // Throw it way down past the screen boundary
+    self.pickerContainerView.frame = pickerFrame;
+    
     [self loadAndBindSpriteForID:self.pokemonID];
 }
 
-#pragma mark - Ability Button & Picker Animations
-
-- (IBAction)abilityButtonTapped:(id)sender {
-    if (self.availableAbilities.count == 0) {
-        NSLog(@"API data hasn't loaded yet, or failed!");
-        return;
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // 1. Force the controller's main view to match the full window frame
+    CGRect screenBounds = [[UIScreen mainScreen] bounds];
+    self.view.frame = screenBounds;
+    
+    // 2. Force the scroll view to fill the entire physical screen area
+    // This ensures its touch-intercepting frame isn't squished!
+    self.scrollView.frame = self.view.bounds;
+    
+    // 3. Keep your massive scrollable paper height intact
+    self.scrollView.contentSize = CGSizeMake(320, 850);
+    
+    // 4. Double check the picker container is completely out of the touch hierarchy on launch
+    if (self.pickerContainerView.superview) {
+        [self.pickerContainerView removeFromSuperview];
     }
-    
-    NSDictionary *firstAbility = self.availableAbilities[0];
-    self.temporarySelectedAbility = [firstAbility[@"ability"][@"name"] capitalizedString];
-    
-    [self.abilityPickerView reloadAllComponents];
-    [self.abilityPickerView selectRow:0 inComponent:0 animated:NO];
-    
-    // 1. Attach it to the Navigation Controller's view so it hovers over the glass!
-    UIView *glassView = self.navigationController.view;
-    
-    if (!self.pickerContainerView.superview) {
-        [glassView addSubview:self.pickerContainerView];
-    }
-    
-    // 2. Base the math on the glassView, not the scrollView
-    CGRect startFrame = self.pickerContainerView.frame;
-    startFrame.origin.y = glassView.frame.size.height;
-    self.pickerContainerView.frame = startFrame;
-    
-    [UIView animateWithDuration:0.3 animations:^{
-        CGRect endFrame = self.pickerContainerView.frame;
-        endFrame.origin.y = glassView.frame.size.height - endFrame.size.height;
-        self.pickerContainerView.frame = endFrame;
-    }];
 }
+
+#pragma mark - Text field
+- (void)dismissKeyboard {
+    // Tells iOS whatever text field currently active and stop edit
+    [self.view endEditing:YES];
+}
+
+#pragma mark - EV Slider & Text Field Binding
+
+// Triggers when user drags a slider
+- (IBAction)evSliderValueChanged:(UISlider *)sender {
+    // Float to integer, as EVs are whole
+    NSInteger evValue = (NSInteger)sender.value;
+    NSString *evString = [NSString stringWithFormat:@"%ld", (long)evValue];
+    
+    // Route the value to the corresponding text field
+    if (sender == self.evHpSlider)       self.evHpTextField.text = evString;
+    else if (sender == self.evAtkSlider) self.evAtkTextField.text = evString;
+    else if (sender == self.evDefSlider) self.evDefTextField.text = evString;
+    else if (sender == self.evSpASlider) self.evSpATextField.text = evString;
+    else if (sender == self.evSpDSlider) self.evSpDTextField.text = evString;
+    else if (sender == self.evSpeSlider) self.evSpeTextField.text = evString;
+}
+
+// Triggers real-time as user types in a text field
+- (IBAction)evTextFieldEdited:(UITextField *)sender {
+    NSInteger evValue = [sender.text integerValue];
+    
+    // Caps at 252 for competitive Pokémon
+    if (evValue > 252) {
+        evValue = 252;
+        sender.text = @"252"; // overwrite typo
+    } else if (evValue < 0) {
+        evValue = 0;
+        sender.text = @"0";
+    }
+    
+    // Route typed value back to corresponding slider
+    if (sender == self.evHpTextField)       self.evHpSlider.value = evValue;
+    else if (sender == self.evAtkTextField) self.evAtkSlider.value = evValue;
+    else if (sender == self.evDefTextField) self.evDefSlider.value = evValue;
+    else if (sender == self.evSpATextField) self.evSpASlider.value = evValue;
+    else if (sender == self.evSpDTextField) self.evSpDSlider.value = evValue;
+    else if (sender == self.evSpeTextField) self.evSpeSlider.value = evValue;
+}
+
+#pragma mark - Universal Button & Picker Animations
 
 - (IBAction)cancelPickerTapped:(id)sender {
     UIView *glassView = self.navigationController.view;
@@ -112,31 +194,76 @@
 
 - (IBAction)donePickerTapped:(id)sender {
     // Update the button title with the confirmed selection
-    [self.abilityButton setTitle:self.temporarySelectedAbility forState:UIControlStateNormal];
+    [self.activePickerButton setTitle:self.temporarySelectedString forState:UIControlStateNormal];
     
-    // Slide the picker back down off-screen
+    // Slide away
     [self cancelPickerTapped:nil];
+}
+
+- (IBAction)openPickerForButton:(UIButton *)sender {
+     [self.view endEditing:YES]; // Hides numpad (if editing text)
+
+     // Safety checks for API data
+     if (sender == self.abilityButton && self.availableAbilities.count == 0) return;
+     if ((sender == self.move1Button || sender == self.move2Button || sender == self.move3Button || sender == self.move4Button) && self.availableMoves.count == 0) return;
+
+     // Remember which button called us
+     self.activePickerButton = sender;
+
+     // Reload the wheel with the correct data and reset it to the top
+     [self.unifiedPickerView reloadAllComponents];
+     [self.unifiedPickerView selectRow:0 inComponent:0 animated:NO];
+
+     // Force the temporary string to grab the very first item just in case the user doesn't spin the wheel
+     [self pickerView:self.unifiedPickerView didSelectRow:0 inComponent:0];
+
+     // Slide it up over the glass!
+     UIView *glassView = self.navigationController.view;
+     if (!self.pickerContainerView.superview) {
+         [glassView addSubview:self.pickerContainerView];
+     }
+
+     CGRect startFrame = self.pickerContainerView.frame;
+     startFrame.origin.y = glassView.frame.size.height;
+     self.pickerContainerView.frame = startFrame;
+
+     [UIView animateWithDuration:0.3 animations:^{
+         CGRect endFrame = self.pickerContainerView.frame;
+         endFrame.origin.y = glassView.frame.size.height - endFrame.size.height;
+         self.pickerContainerView.frame = endFrame;
+     }];
 }
 
 #pragma mark - Picker View Data Source & Delegate
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 1; // Just one single spinning column
+    return 1;
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return self.availableAbilities.count;
+    if (self.activePickerButton == self.natureButton) return self.staticNatures.count;
+    if (self.activePickerButton == self.abilityButton) return self.availableAbilities.count;
+    return self.availableMoves.count; // For all 4 move buttons
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSDictionary *abilityDict = self.availableAbilities[row];
-    return [abilityDict[@"ability"][@"name"] capitalizedString];
+    return [self textForActivePickerAtRow:row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    // Track the row the user stopped scrolling on
-    NSDictionary *abilityDict = self.availableAbilities[row];
-    self.temporarySelectedAbility = [abilityDict[@"ability"][@"name"] capitalizedString];
+    // Save the text of whatever row they stop on
+    self.temporarySelectedString = [self textForActivePickerAtRow:row];
+}
+
+- (NSString *)textForActivePickerAtRow:(NSInteger)row {
+    if (self.activePickerButton == self.natureButton) {
+        return self.staticNatures[row];
+    } else if (self.activePickerButton == self.abilityButton) {
+        return [self.availableAbilities[row][@"ability"][@"name"] capitalizedString];
+    } else {
+        // If it's not Nature or Ability, it MUST be one of the four Move buttons
+        return [self.availableMoves[row][@"move"][@"name"] capitalizedString];
+    }
 }
 
 #pragma mark - Text Field Delegate (Keyboard Handling)
@@ -160,18 +287,50 @@
 #pragma mark - SQLite saving
 
 - (void)savePokemonToTeam {
-    // TODO: Build the final Pokemon object and save it to SQLite via DatabaseController
-    NSLog(@"Saving %@ to Team: %@", self.pokemonName, self.targetTeam.name);
+    // 1. Gather the Basic Stats
+    // Fallback to 50 if they left the level field blank
+    NSInteger level = self.levelTextField.text.length > 0 ? [self.levelTextField.text integerValue] : 50;
     
-    // The Custom Pop: Skip the search screen and go straight back to TeamDetails
+    NSString *nature = self.natureButton.titleLabel.text;
+    NSString *ability = self.abilityButton.titleLabel.text;
+    
+    // 2. Gather the Effort Values (EVs)
+    // We cast the slider floats to integers since EVs are whole numbers
+    NSInteger hpEV = (NSInteger)self.evHpSlider.value;
+    NSInteger atkEV = (NSInteger)self.evAtkSlider.value;
+    NSInteger defEV = (NSInteger)self.evDefSlider.value;
+    NSInteger spaEV = (NSInteger)self.evSpASlider.value;
+    NSInteger spdEV = (NSInteger)self.evSpDSlider.value;
+    NSInteger speEV = (NSInteger)self.evSpeSlider.value;
+    
+    // 3. Gather the Moves (Assuming you wired these up similar to the Ability/Nature buttons!)
+    NSString *move1 = self.move1Button.titleLabel.text;
+    NSString *move2 = self.move2Button.titleLabel.text;
+    NSString *move3 = self.move3Button.titleLabel.text;
+    NSString *move4 = self.move4Button.titleLabel.text;
+    
+    // --- DEBUG LOGGING ---
+    NSLog(@"💾 SAVING POKEMON TO TEAM: %@", self.targetTeam.name);
+    NSLog(@"Name: %@ (Level %ld)", self.pokemonName, (long)level);
+    NSLog(@"Ability: %@ | Nature: %@", ability, nature);
+    NSLog(@"Moves: [%@, %@, %@, %@]", move1, move2, move3, move4);
+    NSLog(@"EVs - HP:%ld Atk:%ld Def:%ld SpA:%ld SpD:%ld Spe:%ld", (long)hpEV, (long)atkEV, (long)defEV, (long)spaEV, (long)spdEV, (long)speEV);
+    
+    
+    // 4. TODO: Execute your SQLite INSERT query here using your DatabaseController!
+    // [DatabaseController insertPokemon:self.pokemonName level:level ... intoTeam:self.targetTeam.teamID];
+    
+    
+    // 5. The Custom Pop: Skip the search screen and jump straight back to TeamDetails
     for (UIViewController *controller in self.navigationController.viewControllers) {
-        if ([controller isKindOfClass:[TeamDetailsViewController class]]) {
+        // We use NSClassFromString to avoid having to #import TeamDetailsViewController.h if it causes a circular loop
+        if ([controller isKindOfClass:NSClassFromString(@"TeamDetailsViewController")]) {
             [self.navigationController popToViewController:controller animated:YES];
-            return; // We found it and popped, so exit the method
+            return; // Exit the loop and the method
         }
     }
     
-    // Fallback just in case the stack is weird
+    // Fallback if the navigation stack is weird
     [self.navigationController popViewControllerAnimated:YES];
 }
 

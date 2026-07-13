@@ -56,11 +56,21 @@
 @property (nonatomic, weak) IBOutlet UISlider *evSpDSlider;
 @property (nonatomic, weak) IBOutlet UISlider *evSpeSlider;
 
-// --- ABILITY PICKER COMPONENT ---
+// Ability Picker
 @property (nonatomic, strong) IBOutlet UIView *pickerContainerView;
-@property (nonatomic, weak) IBOutlet UIPickerView *abilityPickerView;
+@property (nonatomic, weak) IBOutlet UIPickerView *unifiedPickerView;
 
 // Tracks the currently selected ability string mid-scroll
 @property (nonatomic, strong) NSString *temporarySelectedAbility;
+
+// --- UNIFIED PICKER COMPONENT ---
+
+
+// Data Storage
+@property (nonatomic, strong) NSArray *staticNatures; // For the hardcoded Natures
+
+// State Tracking
+@property (nonatomic, weak) UIButton *activePickerButton; // Remembers which button to update!
+@property (nonatomic, strong) NSString *temporarySelectedString;
 
 @end
